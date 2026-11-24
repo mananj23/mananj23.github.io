@@ -1,0 +1,661 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Manan Jindal: final-year IIT Kanpur engineer building fast, reliable AI systems. Goldman Sachs, published research, quantitative research.">
+<meta property="og:title" content="Manan Jindal"><meta property="og:description" content="I build fast, reliable AI systems. IIT Kanpur, 2027.">
+<meta property="og:image" content="https://mananj23.github.io/og.png"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image">
+<title>Manan Jindal</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Manan Jindal","jobTitle":"Software and AI Engineer","alumniOf":{"@type":"CollegeOrUniversity","name":"Indian Institute of Technology Kanpur"},"email":"mailto:mananj23@iitk.ac.in","sameAs":["https://github.com/mananj23","https://www.linkedin.com/in/manan-jindal-7830ba27a/"],"knowsAbout":["Large language models","Information retrieval","Quantitative research","Python"]}</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: dark signal-lab. Hero with live signal field + 30-second summary for skimming recruiters, then interactive proof:
+   a latency race, a real backtest curve, a spike-train raster. Command palette (Ctrl/Cmd+K) and a recruiter mode. Single committed dark look. */
+:root{
+  --bg:#070B14; --bg2:#0B1220; --card:#0E1627; --card2:#111B2F; --line:#1C2840; --line2:#2A3A58;
+  --ink:#EAF0F7; --muted:#8D9BB1; --dim:#5A6780;
+  --cyan:#5EEAD4; --amber:#F7B955; --cyan-soft:rgba(94,234,212,.12); --amber-soft:rgba(247,185,85,.12);
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Geist","Segoe UI",system-ui,sans-serif;
+  --mono:"Geist Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+::selection{background:var(--cyan);color:var(--bg)}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+button{font:inherit;color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* scroll progress (scroll-driven animation) */
+.progress{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);height:2px;z-index:30;background:linear-gradient(90deg,var(--cyan),var(--amber));transform-origin:0 50%;transform:scaleX(0)}
+@supports (animation-timeline: scroll()){.progress{animation:grow linear both;animation-timeline:scroll(root)}@keyframes grow{to{transform:scaleX(1)}}}
+
+/* nav */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:20;background:var(--bg)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10}
+nav .bar{margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 8px 8px 16px;border:1px solid var(--line);border-radius:999px;background:rgba(9,14,27,.72);backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%)}
+.mark{font:500 14px/1 var(--mono);text-decoration:none;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.mark i{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+.navr{display:flex;align-items:center;gap:4px}
+nav ul{display:flex;gap:2px;list-style:none;margin:0;padding:0}
+nav ul a{display:block;padding:7px 11px;border-radius:999px;text-decoration:none;color:var(--muted);font-size:14px;transition:background .2s,color .2s}
+nav ul a:hover{background:var(--card);color:var(--ink)}
+.kbtn{display:inline-flex;align-items:center;gap:8px;padding:6px 8px 6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card);cursor:pointer;color:var(--muted);font-size:13px}
+.kbtn kbd,.kbd{font:500 11px/1 var(--mono);padding:4px 6px;border-radius:6px;border:1px solid var(--line2);background:var(--bg2);color:var(--ink)}
+.kbtn:hover{color:var(--ink);border-color:var(--line2)}
+.rbtn{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;border:1px solid var(--cyan);background:var(--cyan);color:#04201C;font-size:13px;font-weight:600;cursor:pointer}
+.rbtn[aria-pressed="true"]{background:transparent;color:var(--cyan)}
+
+/* hero */
+.hero{position:relative;margin-top:calc(-1 * (env(safe-area-inset-top,0px) + 62px));padding-top:calc(env(safe-area-inset-top,0px) + 140px);padding-bottom:40px;overflow:hidden;isolation:isolate}
+#field{position:absolute;inset:0;width:100%;height:100%;z-index:-1;display:block}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:180px;background:linear-gradient(transparent,var(--bg));z-index:-1;pointer-events:none}
+.chip{display:inline-flex;align-items:center;gap:10px;font:500 12px/1 var(--mono);letter-spacing:.05em;color:var(--muted);padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(12,19,34,.75);backdrop-filter:blur(8px)}
+.chip b{color:var(--cyan);font-weight:500}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--cyan);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(94,234,212,.6)}70%{box-shadow:0 0 0 9px rgba(94,234,212,0)}100%{box-shadow:0 0 0 0 rgba(94,234,212,0)}}
+h1{font:800 clamp(52px,10.5vw,132px)/.9 var(--display);letter-spacing:-.045em;margin:24px 0 22px;text-wrap:balance}
+.rot{display:inline-block;background:linear-gradient(100deg,var(--cyan),var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent;transition:opacity .35s,transform .35s}
+.rot.out{opacity:0;transform:translateY(.15em)}
+.lede{font-size:clamp(18px,2.2vw,22px);line-height:1.5;color:var(--muted);max-width:36em;margin:0 0 30px}
+.lede strong{color:var(--ink);font-weight:500}
+.actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;font:500 15px/1 var(--body);padding:13px 18px;border-radius:12px;text-decoration:none;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;transition:transform .2s,border-color .2s,background .2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--line2)}
+.btn.primary{background:var(--cyan);color:#04201C;border-color:var(--cyan);box-shadow:0 10px 30px -10px rgba(94,234,212,.6)}
+.btn.primary:hover{background:#86F5E3}
+.btn svg{width:16px;height:16px;flex:none}
+
+/* 30-second summary */
+#tldr{padding-block:28px 10px}
+.tldr{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:1px solid var(--line);border-radius:20px;background:rgba(14,22,39,.8);backdrop-filter:blur(10px);overflow:hidden}
+.tldr .h{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--line);font:500 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.tldr .h span:last-child{color:var(--cyan)}
+.fact{padding:20px;border-right:1px solid var(--line);min-width:0}
+.fact:last-child{border-right:0}
+.fact b{display:block;font:800 clamp(26px,3vw,36px)/1 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.fact span{display:block;margin-top:8px;font-size:13.5px;line-height:1.45;color:var(--muted)}
+.fact b.c{color:var(--cyan)}
+
+/* marquee */
+.marquee{margin-top:56px;border-block:1px solid var(--line);overflow:hidden;padding-block:15px;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.mq{display:flex;gap:40px;width:max-content;animation:mq 40s linear infinite;font:500 14px/1 var(--mono);color:var(--dim)}
+.mq span{display:flex;align-items:center;gap:40px;white-space:nowrap}
+.mq span::after{content:"◆";font-size:7px;color:var(--line2)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding-block:100px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin:0 0 14px;display:flex;gap:10px;align-items:center}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--cyan)}
+h2{font:600 clamp(34px,5.4vw,62px)/1 var(--display);letter-spacing:-.035em;margin:0 0 42px;text-wrap:balance;max-width:17ch}
+h2 em{font-style:normal;color:var(--muted)}
+
+/* flagship case study */
+.flag{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:18px}
+.panel{position:relative;border:1px solid var(--line);border-radius:22px;background:var(--card);padding:28px;min-width:0;overflow:hidden}
+.meta{font:500 11px/1.5 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin:0 0 10px}
+.panel h3{font:600 clamp(24px,2.8vw,32px)/1.12 var(--display);letter-spacing:-.02em;margin:0 0 14px}
+.big{font:800 clamp(48px,7vw,84px)/.9 var(--display);letter-spacing:-.045em;background:linear-gradient(180deg,#C2FFF4,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.biglab{font:400 13px/1.4 var(--mono);color:var(--muted);margin:6px 0 20px}
+.steps{display:grid;gap:0}
+.step{display:grid;grid-template-columns:92px minmax(0,1fr);gap:14px;padding-block:12px;border-top:1px solid var(--line);font-size:15px}
+.step b{font:500 11px/1.9 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--cyan)}
+.step span{color:#C7D2E0}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.tags span{font:400 12px/1 var(--mono);padding:7px 9px;border-radius:8px;background:rgba(255,255,255,.03);border:1px solid var(--line);color:var(--muted)}
+
+/* latency race */
+.race h4{font:500 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin:0 0 18px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.lane{margin-bottom:22px}
+.lane .lt{display:flex;justify-content:space-between;font:500 13px/1 var(--mono);color:var(--muted);margin-bottom:9px}
+.lane .lt b{color:var(--ink);font-weight:500;font-variant-numeric:tabular-nums}
+.pipe{display:flex;gap:4px;height:38px}
+.stage{position:relative;border-radius:8px;border:1px solid var(--line);overflow:hidden;display:flex;align-items:center;justify-content:center;font:500 11.5px/1 var(--mono);color:var(--dim);background:var(--bg2)}
+.stage i{position:absolute;inset:0;transform-origin:0 50%;transform:scaleX(1)}
+.stage span{position:relative;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 6px}
+.stage.llm{flex:1}.stage.llm i{background:linear-gradient(90deg,rgba(247,185,85,.22),rgba(247,185,85,.38))}.stage.llm span{color:#FAD9A1}
+.stage.lk{flex:.32}.stage.lk i{background:linear-gradient(90deg,rgba(94,234,212,.22),rgba(94,234,212,.42))}.stage.lk span{color:var(--cyan)}
+.stage.ex{flex:.9}.stage.ex i{background:rgba(234,240,247,.08)}.stage.ex span{color:var(--muted)}
+.after .pipe{width:46%}
+.race .note{font-size:13px;color:var(--dim);margin:6px 0 0}
+.race .note b{color:var(--cyan);font-weight:500}
+.run{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;border:1px solid var(--line2);background:var(--bg2);cursor:pointer;font:500 12px/1 var(--mono);color:var(--ink);letter-spacing:.04em;text-transform:none}
+.run:hover{border-color:var(--cyan);color:var(--cyan)}
+details{margin-top:18px;border-top:1px solid var(--line);padding-top:14px}
+summary{cursor:pointer;font:500 13px/1.4 var(--mono);color:var(--cyan);list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+ ";}
+details[open] summary::before{content:"− "}
+details p{color:var(--muted);font-size:15px;margin:10px 0 0}
+
+.flow{margin-top:22px;border-top:1px solid var(--line);padding-top:18px}
+.flow h5{font:500 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin:0 0 14px}
+.flow ol{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.flow li{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--bg2);font-size:14px}
+.flow li b{font:500 12px/1 var(--mono);color:var(--cyan);text-align:center}
+.flow li span{color:#C7D2E0;min-width:0}
+.flow li em{font:400 11px/1 var(--mono);font-style:normal;color:var(--dim);white-space:nowrap}
+.flow li.hot{border-color:rgba(94,234,212,.45);background:linear-gradient(90deg,rgba(94,234,212,.08),var(--bg2))}
+@media (max-width:620px){.flow li em{display:none}.flow li{grid-template-columns:24px minmax(0,1fr)}}
+/* leadership */
+.lead{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:18px}
+.igts{position:relative;border-radius:24px;padding:2px;background:linear-gradient(140deg,rgba(247,185,85,.7),rgba(94,234,212,.35) 55%,var(--line))}
+.igts .in{border-radius:22px;background:var(--card);padding:30px;height:100%;display:flex;flex-direction:column;gap:14px}
+.igts .role{font:500 12px/1.5 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin:0}
+.igts h3{font:700 clamp(28px,3.6vw,42px)/1.05 var(--display);letter-spacing:-.03em;margin:0}
+.igts p{margin:0;color:var(--muted)}
+.inums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:4px}
+.inums div{border:1px solid var(--line);border-radius:14px;padding:14px;background:var(--bg2)}
+.inums b{display:block;font:800 clamp(26px,3vw,36px)/1 var(--display);letter-spacing:-.03em;color:var(--ink)}
+.inums span{display:block;font-size:12.5px;line-height:1.4;color:var(--muted);margin-top:6px}
+.topics{display:flex;flex-wrap:wrap;gap:6px}
+.topics span{font:400 12px/1 var(--mono);padding:7px 9px;border-radius:999px;border:1px solid rgba(247,185,85,.35);color:#F9D59A;background:rgba(247,185,85,.06)}
+.game{border:1px solid var(--line);border-radius:24px;background:var(--card);padding:26px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.game h4{font:500 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin:0}
+.game h3{font:600 22px/1.2 var(--display);margin:0;letter-spacing:-.015em}
+.pm{display:grid;grid-template-columns:auto 1fr 1fr;gap:6px;font:500 13px/1 var(--mono)}
+.pm .hd{color:var(--dim);display:flex;align-items:center;justify-content:center;padding:6px;text-align:center}
+.pm .rh{justify-content:flex-start}
+.cell{border:1px solid var(--line);border-radius:12px;background:var(--bg2);padding:16px 8px;cursor:pointer;text-align:center;color:var(--ink);transition:border-color .2s,background .2s,transform .2s}
+.cell:hover{border-color:var(--line2);transform:translateY(-1px)}
+.cell .y{color:var(--cyan)}.cell .t{color:var(--amber)}
+.cell[aria-pressed="true"]{border-color:var(--cyan);background:rgba(94,234,212,.08)}
+.cell.nash{box-shadow:inset 0 0 0 1px rgba(247,185,85,.6)}
+.gout{min-height:4.8em;font-size:14.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin:0}
+.gout b{color:var(--ink)}
+.roles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.roles .tile{grid-column:auto}
+.tile p.meta{font:500 11px/1.5 var(--mono);letter-spacing:.1em;color:var(--dim)}
+.game .gnote{margin-top:auto;font:400 12px/1.5 var(--mono);color:var(--dim)}
+@media (max-width:980px){.lead,.roles{grid-template-columns:minmax(0,1fr)}}
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;margin-top:16px}
+.tile{--x:50%;--y:50%;position:relative;grid-column:span 2;border:1px solid var(--line);border-radius:22px;padding:24px;background:var(--card);overflow:hidden;display:flex;flex-direction:column;gap:10px;min-width:0;transition:border-color .3s,transform .3s}
+.tile::before,.panel::before{content:"";position:absolute;inset:0;background:radial-gradient(460px circle at var(--x) var(--y),rgba(94,234,212,.09),transparent 45%);opacity:0;transition:opacity .3s;pointer-events:none}
+.tile:hover,.panel:hover{border-color:var(--line2)}
+.tile:hover::before,.panel:hover::before{opacity:1}
+.t3{grid-column:span 3}
+.tile h3{font:600 clamp(21px,2.2vw,26px)/1.15 var(--display);letter-spacing:-.02em;margin:0}
+.tile p{margin:0;color:var(--muted);font-size:15px}
+.num{font:800 clamp(38px,5vw,60px)/.95 var(--display);letter-spacing:-.04em;background:linear-gradient(180deg,var(--ink),#9FB2C8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.numlab{font:400 12.5px/1.4 var(--mono);color:var(--muted)}
+.chart{position:relative;margin:6px 0 2px;border:1px solid var(--line);border-radius:12px;background:var(--bg2);padding:10px 10px 6px}
+.chart svg{display:block;width:100%;height:auto}
+.chart .cap{font:400 11px/1.4 var(--mono);color:var(--dim);margin-top:4px;display:flex;justify-content:space-between;gap:8px}
+#raster{width:100%;height:120px;display:block;border-radius:12px;border:1px solid var(--line);background:var(--bg2)}
+.link{font:500 13px/1 var(--mono);color:var(--cyan);text-decoration:none;margin-top:auto}
+.link:hover{text-decoration:underline}
+
+/* paper */
+.paper{position:relative;border-radius:24px;padding:2px;background:linear-gradient(120deg,rgba(94,234,212,.65),rgba(247,185,85,.35) 60%,var(--line))}
+.paper .in{border-radius:22px;background:var(--card);padding:32px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:32px;align-items:center}
+.venue{font:500 12px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin:0 0 12px}
+.paper h3{font:600 clamp(24px,3vw,34px)/1.12 var(--display);letter-spacing:-.02em;margin:0 0 12px}
+.paper p{color:var(--muted);margin:0 0 14px}
+.acc{font:800 clamp(60px,8vw,96px)/.9 var(--display);letter-spacing:-.045em;color:var(--cyan)}
+.acc small{display:block;font:400 13px/1.5 var(--mono);color:var(--muted);letter-spacing:0;margin-top:8px}
+
+/* timeline */
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:linear-gradient(var(--cyan),var(--line) 40%,var(--line))}
+.tl li{position:relative;display:grid;grid-template-columns:170px minmax(0,1fr);gap:24px;padding:0 0 34px 36px}
+.tl li::before{content:"";position:absolute;left:0;top:7px;width:15px;height:15px;border-radius:50%;background:var(--bg);border:2px solid var(--dim)}
+.tl li:first-child::before{border-color:var(--cyan);box-shadow:0 0 14px var(--cyan)}
+.when{font:400 13px/1.9 var(--mono);color:var(--dim);font-variant-numeric:tabular-nums}
+.tl h3{font:600 20px/1.3 var(--display);margin:0;letter-spacing:-.01em}
+.tl h3 span{font:400 15px var(--body);color:var(--muted)}
+.tl p{margin:6px 0 0;color:var(--muted);max-width:62ch}
+
+/* record */
+.rec{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.r{border:1px solid var(--line);border-radius:18px;padding:22px;background:linear-gradient(180deg,var(--card),var(--bg2))}
+.r b{display:block;font:800 clamp(34px,4vw,46px)/1 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.r span{display:block;margin-top:10px;font-size:14px;line-height:1.45;color:var(--muted)}
+
+/* contact */
+.contact{padding-block:110px 90px}
+.contact h2{font-size:clamp(44px,8vw,108px);max-width:12ch;margin-bottom:22px}
+.contact h2 span{background:linear-gradient(100deg,var(--cyan),var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent}
+.contact p{color:var(--muted);max-width:48ch;font-size:18px;margin:0 0 28px}
+.mail{font:500 clamp(17px,2.4vw,22px)/1 var(--mono);color:var(--ink);user-select:all;padding:14px 18px;border:1px dashed var(--line2);border-radius:12px;word-break:break-all}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:50;font:500 13px/1 var(--mono);padding:12px 16px;border-radius:12px;background:var(--ink);color:var(--bg);transition:opacity .25s,transform .25s}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+footer{border-top:1px solid var(--line);padding-block:24px;font:400 12px/1.5 var(--mono);color:var(--dim)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* command palette */
+dialog.cmd{width:min(560px,calc(100vw - 32px));padding:0;border:1px solid var(--line2);border-radius:18px;background:rgba(12,19,34,.96);color:var(--ink);box-shadow:0 30px 80px -20px rgba(0,0,0,.8)}
+dialog.cmd::backdrop{background:rgba(3,6,12,.6);backdrop-filter:blur(4px)}
+.cmd input{width:100%;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--ink);font:400 16px/1 var(--body);padding:18px 20px;outline:none}
+.cmd ul{list-style:none;margin:0;padding:8px;max-height:min(60vh,380px);overflow:auto}
+.cmd li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;cursor:pointer;font-size:15px;color:var(--muted)}
+.cmd li small{font:400 11px/1 var(--mono);color:var(--dim)}
+.cmd li[aria-selected="true"]{background:var(--card2);color:var(--ink)}
+.cmd .foot{display:flex;gap:14px;padding:10px 16px;border-top:1px solid var(--line);font:400 11px/1 var(--mono);color:var(--dim)}
+
+/* recruiter mode: only the essentials */
+body.rmode .hide-r{display:none!important}
+body.rmode #tldr{padding-top:40px}
+
+/* scroll-linked entrances; content fully visible at rest */
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion: no-preference){
+    .rise{animation:rise linear both;animation-timeline:view();animation-range:entry 0% cover 26%}
+    @keyframes rise{from{transform:translateY(34px) scale(.98)}to{transform:none}}
+  }
+}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+/* responsive */
+@media (max-width:980px){
+  .flag{grid-template-columns:minmax(0,1fr)}
+  .tldr{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fact{border-bottom:1px solid var(--line)}
+  .fact:nth-child(odd){border-right:0}
+  .fact:last-child{grid-column:1/-1;border-bottom:0}
+  .bento{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tile,.t3{grid-column:span 1}
+  .rec{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .paper .in{grid-template-columns:minmax(0,1fr)}
+  nav ul{display:none}
+}
+@media (max-width:620px){
+  .bento{grid-template-columns:minmax(0,1fr)}
+  .tile,.t3{grid-column:1/-1}
+  .tl li{grid-template-columns:minmax(0,1fr);gap:2px}
+  .step{grid-template-columns:minmax(0,1fr);gap:2px}
+  .after .pipe{width:70%}
+  section{padding-block:76px}
+  .kbtn .kt{display:none}
+  .panel,.paper .in{padding:22px}
+}
+</style>
+</head><body>
+
+
+<div class="progress" aria-hidden="true"></div>
+
+<nav aria-label="Site">
+  <div class="wrap">
+    <div class="bar">
+      <a class="mark" href="#top"><i aria-hidden="true"></i>manan.jindal</a>
+      <div class="navr">
+        <ul>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#leadership">Leadership</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="kbtn" id="openCmd" type="button" aria-label="Open command menu"><span class="kt">Jump to</span><kbd id="kmod">Ctrl K</kbd></button>
+        <button class="rbtn" id="rmode" type="button" aria-pressed="false">Recruiter mode</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+  <header class="hero">
+    <canvas id="field" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <span class="chip"><span class="pulse" aria-hidden="true"></span>Open to <b>2027</b> software, AI and quant roles</span>
+      <h1>Manan Jindal<br><span class="sr">builds </span><span aria-hidden="true">builds </span><span class="rot" id="rot">fast AI.</span></h1>
+      <p class="lede">Final-year at <strong>IIT Kanpur</strong>. At <strong>Goldman Sachs</strong> I took three LLM calls off the critical path of a production assistant and cut its latency by <strong>50–60%</strong>, with no loss in accuracy.</p>
+      <div class="actions">
+        <a class="btn primary" href="#work">See the work
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn" href="https://github.com/mananj23" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.71 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/manan-jindal-7830ba27a/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 1.15C0 .52.52 0 1.17 0h13.66C15.48 0 16 .52 16 1.15v13.7c0 .63-.52 1.15-1.17 1.15H1.17C.52 16 0 15.48 0 14.85V1.15Zm4.94 12.24V6.17H2.54v7.22h2.4ZM3.74 5.18c.84 0 1.36-.55 1.36-1.25-.02-.71-.52-1.25-1.34-1.25-.82 0-1.36.54-1.36 1.25 0 .7.52 1.25 1.33 1.25h.01Zm4.91 8.21V9.36c0-.22.02-.43.08-.59.17-.43.57-.88 1.23-.88.87 0 1.22.66 1.22 1.64v3.86h2.4V9.25c0-2.22-1.18-3.25-2.76-3.25-1.27 0-1.84.7-2.16 1.19v.03h-.02l.02-.03V6.17h-2.4c.03.68 0 7.22 0 7.22h2.4Z"/></svg>LinkedIn</a>
+        <a class="btn" href="resume.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0 3-3m-3 3L5 7M3 13h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Resume</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="tldr">
+    <div class="wrap">
+      <div class="tldr">
+        <div class="h"><span>The 30-second version</span><span>IIT Kanpur · 2027</span></div>
+        <div class="fact"><b class="c">50–60%</b><span>latency cut on a production AI assistant at Goldman Sachs</span></div>
+        <div class="fact"><b>4</b><span>internships, incl. Goldman Sachs · founder, IITK chapter of the Indian Game Theory Society</span></div>
+        <div class="fact"><b>Paper</b><span>accepted, Journal of Computational Neuroscience (Springer)</span></div>
+        <div class="fact"><b>#81</b><span>global rank, Trexquant Alpha Challenge · Gold at WorldQuant</span></div>
+        <div class="fact"><b>1287</b><span>All India Rank, JEE Advanced 2023 · top 0.8%</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee hide-r" aria-label="Tools I work with">
+    <div class="mq">
+      <span>Python</span><span>FastAPI</span><span>LangGraph</span><span>LangChain</span><span>BM25</span><span>Cross-encoders</span><span>MongoDB</span><span>gevent</span><span>PyTorch</span><span>NumPy</span><span>React</span><span>Node.js</span><span>Docker</span><span>AWS EC2</span><span>C++</span>
+      <span aria-hidden="true">Python</span><span aria-hidden="true">FastAPI</span><span aria-hidden="true">LangGraph</span><span aria-hidden="true">LangChain</span><span aria-hidden="true">BM25</span><span aria-hidden="true">Cross-encoders</span><span aria-hidden="true">MongoDB</span><span aria-hidden="true">gevent</span><span aria-hidden="true">PyTorch</span><span aria-hidden="true">NumPy</span><span aria-hidden="true">React</span><span aria-hidden="true">Node.js</span><span aria-hidden="true">Docker</span><span aria-hidden="true">AWS EC2</span><span aria-hidden="true">C++</span>
+    </div>
+  </div>
+
+  <section id="work" class="hide-r">
+    <div class="wrap">
+      <p class="eyebrow">Selected work</p>
+      <h2>Systems that ship, <em>with the numbers to prove it.</em></h2>
+
+      <div class="flag">
+        <article class="panel rise">
+          <p class="meta">Goldman Sachs · AI Engineer Intern · Asset &amp; Wealth Management · 2026</p>
+          <h3>Taking LLM calls off the critical path</h3>
+          <div class="big">50–60%</div>
+          <p class="biglab">lower end-to-end latency in production · execution accuracy unchanged</p>
+          <div class="steps">
+            <div class="step"><b>Problem</b><span>Every advisor query ran 3 sequential LLM calls (intent, planning, tool selection) before anything executed.</span></div>
+            <div class="step"><b>Build</b><span>A millisecond typeahead that ranks candidate actions with BM25, prefix and fuzzy search, and a cross-encoder reranker. Each suggestion maps to a MongoDB template that encodes the full tool-and-execution chain.</span></div>
+            <div class="step"><b>Stack</b><span>Integrated into a LangChain/LangGraph agent stack on FastAPI, with gevent monkey patching for concurrent I/O.</span></div>
+          </div>
+          <details>
+            <summary>The trade-off</summary>
+            <p>A deterministic lookup is faster and more predictable than three model calls, but templates must be written and kept current. So I also built an interface to author and manage the template library.</p>
+          </details>
+          <div class="tags"><span>FastAPI</span><span>LangGraph</span><span>BM25</span><span>Rerankers</span><span>MongoDB</span><span>gevent</span></div>
+          <a class="link" href="goldman.html" style="display:inline-block;margin-top:18px">Read the full case study →</a>
+        </article>
+
+        <article class="panel race rise" aria-labelledby="raceh">
+          <h4 id="raceh"><span>One query, two pipelines</span><button class="run" id="run" type="button">▶ Run a query</button></h4>
+          <div class="lane">
+            <div class="lt"><span>Before · 3 LLM hops</span><b id="tb">1.00×</b></div>
+            <div class="pipe" id="pb"><div class="stage llm"><i></i><span>intent</span></div><div class="stage llm"><i></i><span>plan</span></div><div class="stage llm"><i></i><span>tool</span></div><div class="stage ex"><i></i><span>execute</span></div></div>
+          </div>
+          <div class="lane after">
+            <div class="lt"><span>After · lookup</span><b id="ta">0.45×</b></div>
+            <div class="pipe" id="pa"><div class="stage lk"><i></i><span>lookup</span></div><div class="stage ex"><i></i><span>execute</span></div></div>
+          </div>
+          <p class="note">Animated timing is illustrative. Measured result in production: <b>50–60% lower end-to-end latency</b>.</p>
+          <div class="flow">
+            <h5>Inside the fast path</h5>
+            <ol>
+              <li><b>1</b><span>Advisor types a request</span><em>keystrokes</em></li>
+              <li><b>2</b><span>BM25 + prefix/fuzzy search shortlist actions</span><em>recall</em></li>
+              <li><b>3</b><span>Cross-encoder reranks the shortlist</span><em>precision</em></li>
+              <li class="hot"><b>4</b><span>Matched MongoDB template runs the full tool chain</span><em>no LLM hops</em></li>
+            </ol>
+          </div>
+          <details>
+            <summary>How the ranking works</summary>
+            <p>BM25 finds keyword matches, prefix and fuzzy search catch partial and misspelled input as the advisor types, and a cross-encoder reranks the shortlist so the best action comes first, all in milliseconds.</p>
+          </details>
+        </article>
+      </div>
+
+      <div class="bento">
+        <article class="tile t3 rise">
+          <p class="meta">Trexquant · WorldQuant · 2026</p>
+          <h3>Quantitative alpha research</h3>
+          <div class="chart" role="img" aria-label="Real cumulative backtest PnL of alpha 791780 from 2007 to 2021, rising steadily to about 0.84 million dollars with no losing year">
+            <svg viewBox="0 0 720 250" preserveAspectRatio="none" aria-hidden="true">
+              <defs><linearGradient id="gf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5EEAD4" stop-opacity=".28"/><stop offset="1" stop-color="#5EEAD4" stop-opacity="0"/></linearGradient></defs>
+              <line x1="0" y1="231" x2="720" y2="231" stroke="#2A3A58" stroke-width="1.5"/>
+              <path id="pnlfill" fill="url(#gf)" d=""/>
+              <path id="pnl" fill="none" stroke="#5EEAD4" stroke-width="3" stroke-linejoin="round" d="M2 231L6 230L10 229L14 227L18 225L22 221L26 217L30 217L34 213L38 209L42 207L46 210L50 209L54 207L58 207L63 208L67 207L71 208L75 207L79 202L83 187L87 184L91 186L95 185L99 185L103 183L107 180L111 179L115 179L119 177L123 175L127 175L131 168L135 168L139 169L143 169L147 169L151 168L155 165L159 164L163 165L167 164L171 164L176 163L180 163L184 161L188 162L192 160L196 159L200 160L204 160L208 159L212 158L216 157L220 156L224 158L228 156L232 154L236 153L240 154L244 152L248 150L252 151L256 150L260 151L264 149L268 150L272 150L276 151L280 150L284 150L289 149L293 148L297 147L301 148L305 147L309 147L313 147L317 147L321 146L325 146L329 146L333 146L337 146L341 146L345 147L349 146L353 146L357 146L361 146L365 147L369 146L373 144L377 144L381 144L385 142L389 143L393 141L397 141L402 142L406 143L410 143L414 141L418 140L422 140L426 138L430 139L434 138L438 137L442 137L446 138L450 139L454 138L458 137L462 135L466 136L470 136L474 134L478 134L482 134L486 135L490 134L494 133L498 133L502 134L506 131L510 130L514 128L519 125L523 125L527 126L531 125L535 124L539 124L543 122L547 122L551 122L555 120L559 119L563 119L567 116L571 117L575 119L579 118L583 119L587 118L591 118L595 116L599 116L603 115L607 114L611 113L615 112L619 112L623 112L627 115L632 109L636 101L640 95L644 92L648 92L652 94L656 98L660 96L664 94L668 92L672 92L676 93L680 93L684 90L688 90L692 90L696 88L700 87L704 87L708 87L712 86L716 84L718 83"/>
+            </svg>
+            <div class="cap"><span>Real backtest · alpha 791780 · 2007–2021</span><span>15 of 15 years positive</span></div>
+          </div>
+          <p>5,000+ stock-selection signals backtested on 15 years of U.S. equities. 169 qualified at Trexquant (rank 7 at IIT Kanpur, 81 globally); Gold certificate and best Sharpe 2.9 on held-out data at WorldQuant BRAIN.</p>
+          <a class="link" href="alpha-research.html">Read the research notes: four theses, real curves →</a>
+        </article>
+
+        <article class="tile t3 rise">
+          <p class="meta">Undergraduate project · Grade A* · 2026</p>
+          <h3>Op-amps designed by deep RL</h3>
+          <div><div class="num">4 / 4</div><p class="numlab">target specs met · 7-transistor OTA · 60.5 dB gain · 89° phase margin</p></div>
+          <p>Reproduced an IEEE TCAD 2022 framework from scratch: a REINFORCE policy in pure NumPy with hand-written backprop assembles circuits from 36 typed blocks, sized by NSGA-II on live ngspice runs. A hash table skips repeat simulations.</p>
+          <div class="tags"><span>NumPy</span><span>REINFORCE</span><span>NSGA-II</span><span>SPICE</span></div>
+        </article>
+
+        <article class="tile rise">
+          <p class="meta">AlgoUniversity · SWE Co-Op · 2025</p>
+          <h3>Online judge, 1,000+ users</h3>
+          <p>MERN platform with authentication and real-time code execution, containerised with Docker on AWS EC2.</p>
+          <div class="tags"><span>React</span><span>Node.js</span><span>Docker</span><span>AWS</span></div>
+        </article>
+        <article class="tile rise">
+          <p class="meta">Wadhwani AI · Research · 2025</p>
+          <h3>Lecture video segmentation</h3>
+          <p>CNN + Bi-LSTM + GCN pipeline that timestamps lecture videos for 1M+ learners and cuts false scene splits.</p>
+          <div class="tags"><span>PyTorch</span><span>GCN</span><span>Bi-LSTM</span></div>
+        </article>
+        <article class="tile rise">
+          <p class="meta">Sukoon · People + AI · 2024</p>
+          <h3>Multi-agent wellbeing assistant</h3>
+          <p>GPT-4 and Claude agents on LangGraph, validated by therapists, shipped on WhatsApp. 5k users, +34% engagement.</p>
+          <a class="link" href="https://github.com/mananj23/Sukoon" target="_blank" rel="noopener">Source on GitHub →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="research" class="hide-r">
+    <div class="wrap">
+      <p class="eyebrow">Research</p>
+      <h2>Reading the brain <em>with a 1D CNN.</em></h2>
+      <div class="paper rise">
+        <div class="in">
+          <div>
+            <p class="venue">Journal of Computational Neuroscience · Springer · Accepted</p>
+            <h3>Machine-learning analysis of odor-frequency encoding in the piriform cortex</h3>
+            <p>Co-author, with Prof. Debanjan Das Gupta. Synaptic-ablation, time-shuffling and neuron-knockout tests show which synapses, timing and sub-populations drive frequency selectivity.</p>
+            <canvas id="raster" aria-hidden="true"></canvas>
+            <p style="font:400 11px/1.4 var(--mono);color:var(--dim);margin:6px 0 14px">Illustrative spike raster</p>
+            <a class="link" href="paper.html">Read about the paper →</a>&nbsp;&nbsp;<a class="link" href="https://github.com/mananj23/Neural_Networking" target="_blank" rel="noopener">Code on GitHub →</a>
+          </div>
+          <div class="acc">95.3%<small>accuracy decoding odor frequency from cortical spike trains</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey" class="hide-r">
+    <div class="wrap">
+      <p class="eyebrow">Journey</p>
+      <h2>Four internships, <em>one direction.</em></h2>
+      <ol class="tl">
+        <li class="rise"><span class="when">May 2026 – now</span><div><h3>Goldman Sachs <span>· AI Engineer Intern</span></h3><p>Latency and retrieval for a production agentic assistant used by wealth advisors.</p></div></li>
+        <li class="rise"><span class="when">May – Jul 2025</span><div><h3>AlgoUniversity <span>· SWE Co-Op, Y Combinator-backed</span></h3><p>Online judge on the MERN stack; mentored by engineers from Google, Microsoft, Apple, Tower Research and AlphaGrep.</p></div></li>
+        <li class="rise"><span class="when">Dec 2024 – Apr 2025</span><div><h3>Wadhwani AI <span>· Research Intern</span></h3><p>Deep-learning pipeline that segments lecture videos for 1M+ learners.</p></div></li>
+        <li class="rise"><span class="when">Jul – Dec 2024</span><div><h3>Sukoon, People + AI <span>· Tech Consultant</span></h3><p>Multi-agent mental-health chatbot for college students.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="leadership" class="hide-r">
+    <div class="wrap">
+      <p class="eyebrow">Leadership</p>
+      <h2>I started IIT Kanpur's <em>game theory community.</em></h2>
+      <div class="lead">
+        <div class="igts rise"><div class="in">
+          <p class="role">Founder · IIT Kanpur chapter · Aug 2025 – Apr 2026</p>
+          <h3>Indian Game Theory Society</h3>
+          <p>I founded the society's IIT Kanpur chapter, the campus's first group for game theory: how people and markets make strategic decisions. We made it hands-on, teaching ideas through games people actually play.</p>
+          <div class="inums">
+            <div><b>250+</b><span>attendees across flagship events</span></div>
+            <div><b>150+</b><span>at the launch session on Bayesian and strategic games</span></div>
+            <div><b>5</b><span>curated strategic games at Game Night, 100+ players</span></div>
+          </div>
+          <div class="topics"><span>Nash equilibrium</span><span>Mechanism design</span><span>Auctions</span><span>Bayesian games</span></div>
+        </div></div>
+
+        <div class="game rise" aria-labelledby="gh">
+          <h4>Try it · a game-theory classic</h4>
+          <h3 id="gh">Prisoner's dilemma</h3>
+          <div class="pm" role="group" aria-label="Payoff matrix. Each cell shows your payoff, then theirs.">
+            <span class="hd"></span><span class="hd">They cooperate</span><span class="hd">They defect</span>
+            <span class="hd rh">You cooperate</span>
+            <button class="cell" type="button" data-k="cc" aria-pressed="false"><span class="y">3</span> , <span class="t">3</span></button>
+            <button class="cell" type="button" data-k="cd" aria-pressed="false"><span class="y">0</span> , <span class="t">5</span></button>
+            <span class="hd rh">You defect</span>
+            <button class="cell" type="button" data-k="dc" aria-pressed="false"><span class="y">5</span> , <span class="t">0</span></button>
+            <button class="cell" type="button" data-k="dd" aria-pressed="false"><span class="y">1</span> , <span class="t">1</span></button>
+          </div>
+          <p class="gout" id="gout" aria-live="polite">Pick a cell. Your payoff is in teal, theirs in amber. Can you find the outcome where <b>neither player wants to switch</b>?</p>
+          <p class="gnote">Our sessions taught ideas like this through games people play live, not slides.</p>
+        </div>
+      </div>
+
+      <div class="roles">
+        <article class="tile rise">
+          <p class="meta">Head · Electrical Engineering Association · 2025–26</p>
+          <h3>20 initiatives in one year</h3>
+          <p>One of six Heads leading a 28-person team. I built the department's Research Portal and co-led a resume session; together we ran an IEEE VLSI symposium with researchers from 5 institutes, Winter Projects with 500+ applicants, and the 15-day Signal Sprint hackathon.</p>
+          <a class="link" href="eea.html">Read the EEA journey →</a>
+        </article>
+        <article class="tile rise">
+          <p class="meta">Secretary · IIT Kanpur Consulting Group · 2024–25</p>
+          <h3>Two camps, 50+ freshers</h3>
+          <p>Organised and mentored <a href="https://github.com/mananj23/PIXEL_PERSONA/" target="_blank" rel="noopener" style="color:var(--cyan)">Pixel Persona</a> and <a href="https://github.com/Ameer1803/Web-Genie" target="_blank" rel="noopener" style="color:var(--cyan)">Web Genie</a>, covering CNNs, computer vision, LLMs, agentic workflows and full-stack deployment.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="record" class="hide-r">
+    <div class="wrap">
+      <p class="eyebrow">Record</p>
+      <h2>Ranks <em>and recognition.</em></h2>
+      <div class="rec">
+        <div class="r rise"><b>1287</b><span>All India Rank, JEE Advanced 2023 · top 0.8%</span></div>
+        <div class="r rise"><b>#7</b><span>IIT Kanpur, Trexquant Alpha Challenge · #81 globally</span></div>
+        <div class="r rise"><b>Gold</b><span>WorldQuant BRAIN certificate · 550,000+ participants</span></div>
+        <div class="r rise"><b>8.4</b><span>CPI · Academic Excellence Award 2023–24 · Google Intern Connect 2025</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h2>Let's build something <span>fast.</span></h2>
+      <p>I graduate from IIT Kanpur in 2027 and I'm looking for software, AI and quant roles. Email is the quickest way to reach me.</p>
+      <div class="actions">
+        <span class="mail" id="email">mananj23@iitk.ac.in</span>
+        <button class="btn primary" id="copy" type="button">Copy email</button>
+        <a class="btn" href="https://www.linkedin.com/in/manan-jindal-7830ba27a/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Manan Jindal · B.Tech EE, minor in CSE (ML), IIT Kanpur</span><span>Press <span class="kbd" id="kmod2">Ctrl K</span> to jump anywhere</span></div></footer>
+
+<dialog class="cmd" id="cmd" aria-label="Command menu">
+  <input id="q" type="text" placeholder="Jump to a section or run an action…" autocomplete="off" aria-label="Search commands" aria-controls="cl">
+  <ul id="cl" role="listbox"></ul>
+  <div class="foot"><span>↑↓ move</span><span>↵ select</span><span>esc close</span></div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var mac=/Mac|iPhone|iPad/.test(navigator.platform||'');
+['kmod','kmod2'].forEach(function(id){var e=document.getElementById(id); if(e) e.textContent=mac?'⌘ K':'Ctrl K';});
+
+/* toast */
+var toastT; function toast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove('on')},2200)}
+
+/* copy email */
+function copyEmail(){var t='mananj23@iitk.ac.in';
+  function sel(){var el=document.getElementById('email');var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);toast('Email selected. Press '+(mac?'⌘':'Ctrl')+'+C to copy.')}
+  try{navigator.clipboard.writeText(t).then(function(){toast('Copied '+t)},sel)}catch(e){sel()}}
+document.getElementById('copy').addEventListener('click',copyEmail);
+
+/* rotating headline word */
+var words=['fast AI.','search systems.','quant signals.','reliable agents.'],wi=0,rot=document.getElementById('rot');
+if(!reduce) setInterval(function(){rot.classList.add('out');setTimeout(function(){wi=(wi+1)%words.length;rot.textContent=words[wi];rot.classList.remove('out')},350)},2600);
+
+/* recruiter mode */
+var rb=document.getElementById('rmode');
+function setR(on){document.body.classList.toggle('rmode',on);rb.setAttribute('aria-pressed',on);rb.textContent=on?'Full site':'Recruiter mode';if(on){document.getElementById('tldr').scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})}}
+rb.addEventListener('click',function(){setR(!document.body.classList.contains('rmode'))});
+
+/* signal field */
+(function(){var c=document.getElementById('field');if(!c.getContext)return;var x=c.getContext('2d'),W,H,d=Math.min(devicePixelRatio||1,2),mx=-1e4,my=-1e4,t=0,run=true;
+function size(){var r=c.getBoundingClientRect();W=r.width;H=r.height;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0);draw()}
+var host=c.parentElement;host.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});host.addEventListener('pointerleave',function(){mx=my=-1e4});
+var N=28;function draw(){x.clearRect(0,0,W,H);for(var i=0;i<N;i++){var base=H*(.1+.85*i/N),amp=10+16*Math.sin(i*1.7),f=.004+.0016*Math.sin(i),ph=i*.9+t*(.5+.25*Math.sin(i*2.3));var g=x.createLinearGradient(0,0,W,0),a=.08+.24*Math.pow(Math.sin(i/N*Math.PI),2);g.addColorStop(0,'rgba(94,234,212,0)');g.addColorStop(.45,'rgba(94,234,212,'+a+')');g.addColorStop(1,'rgba(247,185,85,'+a*.9+')');x.strokeStyle=g;x.lineWidth=1.1;x.beginPath();for(var px=0;px<=W;px+=8){var y=base+Math.sin(px*f+ph)*amp+Math.sin(px*f*2.3-ph*.7)*amp*.35,dx=px-mx,dy=y-my,q=dx*dx+dy*dy;if(q<26000){var k=1-q/26000;y+=(dy>0?1:-1)*k*k*40}px?x.lineTo(px,y):x.moveTo(px,y)}x.stroke()}}
+size();addEventListener('resize',size);
+if(!reduce){if('IntersectionObserver'in window)new IntersectionObserver(function(e){run=e[0].isIntersecting}).observe(c);(function loop(){if(run){t+=.012;draw()}requestAnimationFrame(loop)})()}})();
+
+/* real backtest curve: fill area + draw-on */
+(function(){var p=document.getElementById('pnl'),f=document.getElementById('pnlfill');f.setAttribute('d',p.getAttribute('d')+'L718 231L2 231Z');
+if(reduce||!('IntersectionObserver'in window))return;var L=p.getTotalLength();
+new IntersectionObserver(function(es,o){if(es[0].isIntersecting){p.style.strokeDasharray=L;p.style.strokeDashoffset=L;p.getBoundingClientRect();p.style.transition='stroke-dashoffset 1.8s cubic-bezier(.2,.7,.2,1)';p.style.strokeDashoffset=0;o.disconnect()}},{threshold:.4}).observe(p)})();
+
+/* latency race */
+(function(){var btn=document.getElementById('run');var tb=document.getElementById('tb'),ta=document.getElementById('ta');
+var B=[].slice.call(document.querySelectorAll('#pb i')),A=[].slice.call(document.querySelectorAll('#pa i'));
+var unit=900,durB=[1,1,1,.9],durA=[.32,.9];var tot=durB.reduce(function(a,b){return a+b});
+function play(list,dur,label,max){list.forEach(function(i){i.style.transition='none';i.style.transform='scaleX(0)'});var acc=0;list.forEach(function(i,k){var s=acc;acc+=dur[k];setTimeout(function(){i.style.transition='transform '+(dur[k]*unit)+'ms linear';i.style.transform='scaleX(1)'},s*unit+30)});
+var t0=performance.now();(function tick(n){var e=(n-t0)/unit;var v=Math.min(e,acc)/tot;label.textContent=v.toFixed(2)+'×';if(e<acc)requestAnimationFrame(tick)})(t0)}
+btn.addEventListener('click',function(){if(reduce){toast('Before 1.00× · After 0.45×');return}play(B,durB,tb);play(A,durA,ta)});
+if(!reduce&&'IntersectionObserver'in window)new IntersectionObserver(function(es,o){if(es[0].isIntersecting){btn.click();o.disconnect()}},{threshold:.6}).observe(btn.closest('.race'))})();
+
+/* spike raster (illustrative) */
+(function(){var c=document.getElementById('raster');if(!c.getContext)return;var x=c.getContext('2d'),d=Math.min(devicePixelRatio||1,2),W,H,rows=14,sp=[],run=true;
+function size(){var r=c.getBoundingClientRect();W=r.width;H=r.height;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0)}size();addEventListener('resize',size);
+for(var i=0;i<rows;i++)for(var k=0;k<20;k++)sp.push({r:i,x:Math.random()*1});
+function draw(){x.clearRect(0,0,W,H);var rh=(H-16)/rows;for(var j=0;j<sp.length;j++){var s=sp[j],px=s.x*W,burst=Math.abs(px-W*.55)<W*.12;x.fillStyle=burst?'rgba(94,234,212,.95)':'rgba(141,155,177,.55)';x.fillRect(px,8+s.r*rh+1,1.6,rh-3)}
+x.fillStyle='rgba(247,185,85,.10)';x.fillRect(W*.43,0,W*.24,H)}
+function step(){for(var j=0;j<sp.length;j++){var s=sp[j];s.x-=.0016;if(s.x<0){s.x=1;}}if(Math.random()<.5){var r=Math.floor(Math.random()*rows);sp.push({r:r,x:1});if(sp.length>420)sp.shift()}}
+draw();if(!reduce){if('IntersectionObserver'in window)new IntersectionObserver(function(e){run=e[0].isIntersecting}).observe(c);(function loop(){if(run){step();draw()}requestAnimationFrame(loop)})()}})();
+
+
+/* prisoner's dilemma */
+(function(){var out=document.getElementById('gout');var msg={
+ cc:'<b>Both cooperate: 3 each.</b> Best for the pair, but each of you could switch to defect and get 5. Not stable.',
+ cd:'<b>You cooperate, they defect: 0 for you, 5 for them.</b> You would switch to defect and raise your payoff to 1.',
+ dc:'<b>You defect, they cooperate: 5 for you, 0 for them.</b> They would switch to defect and raise theirs to 1.',
+ dd:'<b>Both defect: 1 each. This is the Nash equilibrium.</b> Neither of you gains by switching alone, even though both cooperating pays more. That gap is what makes the game famous.'};
+document.querySelectorAll('.cell').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.cell').forEach(function(c){c.setAttribute('aria-pressed','false');c.classList.remove('nash')});b.setAttribute('aria-pressed','true');if(b.dataset.k==='dd')b.classList.add('nash');out.innerHTML=msg[b.dataset.k]})})})();
+
+/* spotlight */
+document.querySelectorAll('.tile,.panel').forEach(function(el){el.addEventListener('pointermove',function(e){var r=el.getBoundingClientRect();el.style.setProperty('--x',(e.clientX-r.left)+'px');el.style.setProperty('--y',(e.clientY-r.top)+'px')})});
+
+/* command palette */
+var RESUME=true;
+var dlg=document.getElementById('cmd'),q=document.getElementById('q'),ul=document.getElementById('cl'),sel=0,cur=[];
+function go(id){setR(false);dlg.close();var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:reduce?'auto':'smooth'})}
+var items=[
+ {t:'Selected work',k:'section',f:function(){go('work')}},
+ {t:'Goldman Sachs case study',k:'section',f:function(){go('work')}},
+ {t:'Research paper',k:'section',f:function(){go('research')}},
+ {t:'Journey',k:'section',f:function(){go('journey')}},
+ {t:'Leadership: Indian Game Theory Society',k:'section',f:function(){go('leadership')}},
+ {t:'Paper: piriform cortex (full write-up)',k:'page',href:'paper.html',self:true},
+ {t:'EEA journey: 20 initiatives',k:'page',href:'eea.html',self:true},
+ {t:'Ranks and recognition',k:'section',f:function(){go('record')}},
+ {t:'Contact',k:'section',f:function(){go('contact')}},
+ {t:'Copy email address',k:'action',f:function(){dlg.close();copyEmail()}},
+ {t:'Toggle recruiter mode',k:'action',f:function(){dlg.close();setR(!document.body.classList.contains('rmode'))}},
+ {t:'Goldman Sachs case study (full write-up)',k:'page',href:'goldman.html',self:true},
+ {t:'Alpha research notes',k:'page',href:'alpha-research.html',self:true},
+ {t:'Open GitHub',k:'link',href:'https://github.com/mananj23'},
+ {t:'Open LinkedIn',k:'link',href:'https://www.linkedin.com/in/manan-jindal-7830ba27a/'}];
+if(RESUME)items.splice(6,0,{t:'Download resume (PDF)',k:'file',href:'resume.pdf'});
+function render(){var v=q.value.toLowerCase().trim();cur=items.filter(function(i){return !v||i.t.toLowerCase().indexOf(v)>-1});sel=Math.min(sel,Math.max(cur.length-1,0));
+ ul.innerHTML='';if(!cur.length){var e=document.createElement('li');e.textContent='No match. Try "work" or "email".';ul.appendChild(e);return}
+ cur.forEach(function(i,n){var li=document.createElement('li');li.setAttribute('role','option');li.setAttribute('aria-selected',n===sel);
+  if(i.href){var a=document.createElement('a');a.href=i.href;if(!i.self){a.target='_blank';a.rel='noopener';}a.textContent=i.t;a.style.textDecoration='none';a.style.flex='1';li.appendChild(a)}else{var s=document.createElement('span');s.textContent=i.t;li.appendChild(s)}
+  var sm=document.createElement('small');sm.textContent=i.k;li.appendChild(sm);
+  li.addEventListener('click',function(ev){if(i.href){dlg.close();return}i.f()});li.addEventListener('pointermove',function(){if(sel!==n){sel=n;mark()}});ul.appendChild(li)})}
+function mark(){[].forEach.call(ul.children,function(li,n){li.setAttribute('aria-selected',n===sel)})}
+function open(){q.value='';sel=0;render();dlg.showModal();q.focus()}
+document.getElementById('openCmd').addEventListener('click',open);
+q.addEventListener('input',function(){sel=0;render()});
+q.addEventListener('keydown',function(e){if(e.key==='ArrowDown'){e.preventDefault();sel=Math.min(sel+1,cur.length-1);mark()}else if(e.key==='ArrowUp'){e.preventDefault();sel=Math.max(sel-1,0);mark()}else if(e.key==='Enter'){e.preventDefault();var i=cur[sel];if(!i)return;if(i.href){ul.children[sel].querySelector('a').click();dlg.close()}else i.f()}});
+dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+addEventListener('keydown',function(e){if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();dlg.open?dlg.close():open()}});
+})();
+</script>
+
+</body></html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Goldman Sachs Case Study · Manan Jindal</title><meta name="description" content="How Manan Jindal cut the latency of a production agentic assistant at Goldman Sachs by 50–60% without losing accuracy.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css"></head><body>
+<div class="top"><div class="wrap"><a href="index.html"><i aria-hidden="true"></i>manan.jindal</a><a class="back" href="index.html#work">← All work</a></div></div>
+<main>
+<header class="intro"><div class="wrap">
+<p class="eyebrow">Case study · Goldman Sachs · AI Engineer Intern · 2026</p>
+<h1>Taking LLM calls off the critical path</h1>
+<p class="dek">How I cut the end-to-end latency of a production agentic assistant by 50–60%, with execution accuracy unchanged.</p>
+<div class="facts">
+<div><b class="c">50–60%</b><span>lower end-to-end latency in production</span></div>
+<div><b>3 → 0</b><span>LLM calls on the path for a matched suggestion</span></div>
+<div><b>0</b><span>loss in execution accuracy</span></div>
+<div><b>ms</b><span>to rank candidate actions as the advisor types</span></div>
+</div></div></header>
+
+<article><div class="wrap">
+<h2>Context</h2>
+<p>The team runs an internal <strong>agentic assistant</strong> for advisors in Asset &amp; Wealth Management. An advisor types a request in plain language, and the agent works out what to do and runs the right tools. The agent is built on <strong>LangChain and LangGraph</strong> and served with <strong>FastAPI</strong>.</p>
+
+<h2>The problem</h2>
+<p>Before the assistant executed anything, every query passed through three LLM calls, one after another: <strong>intent classification</strong>, <strong>execution planning</strong> and <strong>tool selection</strong>. Each call waits for the one before it, so the delays add up on every request, and the advisor waits through all of them.</p>
+
+<figure>
+<ol class="flow">
+<li class="old"><b>LLM</b><span>Classify the intent</span><em>sequential</em></li>
+<li class="old"><b>LLM</b><span>Plan the execution</span><em>sequential</em></li>
+<li class="old"><b>LLM</b><span>Select the tools</span><em>sequential</em></li>
+<li><b>RUN</b><span>Execute the tool chain</span><em></em></li>
+</ol>
+<figcaption>Before: three model calls stand between the request and the first action.</figcaption>
+</figure>
+
+<h2>The idea</h2>
+<p>If the assistant can recognise the action an advisor wants while they are still typing, it does not need a model to rediscover the plan each time. The plan for that action can be stored once and run directly.</p>
+
+<h2>What I built</h2>
+<h3>1. A typeahead suggestion service</h3>
+<p>As the advisor types, the service proposes the most likely actions within milliseconds. It combines <strong>BM25</strong> keyword detection with <strong>prefix and fuzzy search</strong> to shortlist candidates, including partial and misspelled input, and then a <strong>cross-encoder reranker</strong> orders the shortlist so the best action comes first.</p>
+<h3>2. Templates that encode the whole chain</h3>
+<p>Each suggestion maps to a <strong>MongoDB template</strong> that encodes the full tool-and-execution chain. When the advisor picks a suggestion, the template runs directly, and all three LLM calls are skipped.</p>
+<h3>3. An authoring interface</h3>
+<p>Templates have to be written and kept current, so I built an interface to author and manage the template library.</p>
+<h3>4. Integration</h3>
+<p>The service is integrated into the existing <strong>LangChain/LangGraph</strong> agent stack on <strong>FastAPI</strong>. I used <strong>gevent monkey patching</strong> so that blocking I/O, such as network and database calls, runs concurrently instead of holding up other requests.</p>
+
+<figure>
+<ol class="flow">
+<li><b>1</b><span>Advisor types a request</span><em>keystrokes</em></li>
+<li><b>2</b><span>BM25 + prefix/fuzzy search shortlist actions</span><em>recall</em></li>
+<li><b>3</b><span>Cross-encoder reranks the shortlist</span><em>precision</em></li>
+<li class="hot"><b>4</b><span>Matched MongoDB template runs the full tool chain</span><em>no LLM hops</em></li>
+</ol>
+<figcaption>After: retrieval and ranking replace the three model calls on the fast path.</figcaption>
+</figure>
+
+<h2>Result</h2>
+<div class="callout"><b>End-to-end latency fell by 50–60% at production scale, and execution accuracy stayed the same.</b></div>
+
+<h2>Trade-offs</h2>
+<ul>
+<li><strong>Speed and predictability over flexibility.</strong> A lookup is faster and gives the same answer every time, but it only covers actions that have a template.</li>
+<li><strong>Templates need upkeep.</strong> That is why the authoring interface matters as much as the fast path itself.</li>
+<li><strong>Ranking quality decides the experience.</strong> Keyword search alone finds candidates; the cross-encoder makes sure the right one comes first.</li>
+</ul>
+
+<h2>Stack</h2>
+<p><code>Python</code> <code>FastAPI</code> <code>LangChain</code> <code>LangGraph</code> <code>BM25</code> <code>cross-encoders</code> <code>MongoDB</code> <code>gevent</code></p>
+
+<div class="next"><a href="index.html#work">← Back to all work</a><a href="alpha-research.html">Next: alpha research →</a></div>
+</div></article></main>
+<footer><div class="wrap wide">© 2026 Manan Jindal · IIT Kanpur · <a href="index.html#contact">Contact</a></div></footer></body></html>

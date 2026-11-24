@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Piriform Cortex Paper · Manan Jindal</title><meta name="description" content="Manan Jindal co-authored a Journal of Computational Neuroscience paper using machine learning to study how the piriform cortex encodes odor frequency.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css"></head><body>
+<div class="top"><div class="wrap"><a href="index.html"><i aria-hidden="true"></i>manan.jindal</a><a class="back" href="index.html#research">← Back</a></div></div>
+<main>
+<header class="intro"><div class="wrap">
+<p class="eyebrow">Publication · Journal of Computational Neuroscience · Springer · Accepted</p>
+<h1>How the brain encodes the rhythm of a smell</h1>
+<p class="dek">A machine-learning analysis of odor-frequency encoding in the piriform cortex. Co-authored with Prof. Debanjan Das Gupta.</p>
+<div class="facts">
+<div><b class="c">95.3%</b><span>accuracy decoding odor frequency from spike trains</span></div>
+<div><b>1D CNN</b><span>trained on spatiotemporal firing activity</span></div>
+<div><b>3</b><span>kinds of perturbation test: ablation, shuffling, knockout</span></div>
+<div><b>Co-author</b><span>model design, ablation analysis, interpretation</span></div>
+</div></div></header>
+<article><div class="wrap">
+<h2>The question</h2>
+<p>Odors reach the brain in pulses, and the frequency of those pulses carries information. The <strong>piriform cortex</strong> is the largest region of the olfactory cortex. The paper asks whether odor frequency can be read out from its neurons' firing, and which parts of the circuit carry that information.</p>
+<h2>What I did</h2>
+<ul>
+<li><strong>Built the decoder.</strong> I designed a <strong>1D convolutional neural network</strong> that takes the spatiotemporal firing activity of cortical neurons and classifies the odor frequency. It reached <strong>95.3% accuracy</strong>.</li>
+<li><strong>Took the circuit apart.</strong> To find what drives frequency selectivity, I ran three kinds of test and watched how the decoder's accuracy changed:
+<ul>
+<li><strong>Synaptic ablation</strong> removes individual synapses to test their role.</li>
+<li><strong>Time shuffling</strong> scrambles spike timing to test whether temporal structure matters.</li>
+<li><strong>Neuron knockout</strong> removes groups of neurons to test which sub-populations matter.</li>
+</ul></li>
+<li><strong>Interpreted the results</strong> with my co-author.</li>
+</ul>
+<h2>What we found</h2>
+<div class="callout"><b>Frequency encoding showed statistically significant pre- and post-stimulus dynamics</b>, and the perturbation tests separated the roles of individual synapses, spike timing and neuronal sub-populations.</div>
+<h2>Why it matters for engineering</h2>
+<p>The habit carries straight into engineering: build a model that works, then break it on purpose to learn what it really depends on. Ablation is how you find out whether a model has learned the signal or a shortcut.</p>
+<h2>Details</h2>
+<p><strong>Venue:</strong> Journal of Computational Neuroscience (Springer), accepted.<br><strong>Authors:</strong> co-authored with Prof. Debanjan Das Gupta.<br><strong>Period:</strong> December 2024 to April 2025.<br><strong>Code:</strong> <a href="https://github.com/mananj23/Neural_Networking" target="_blank" rel="noopener">github.com/mananj23/Neural_Networking</a></p>
+<div class="next"><a href="alpha-research.html">← Alpha research</a><a href="index.html#leadership">Next: leadership →</a></div>
+</div></article></main>
+<footer><div class="wrap wide">© 2026 Manan Jindal · IIT Kanpur · <a href="index.html#contact">Contact</a></div></footer></body></html>
