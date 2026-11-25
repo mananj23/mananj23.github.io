@@ -1,676 +1,615 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Manan Jindal: final-year IIT Kanpur engineer building fast, reliable AI systems. Goldman Sachs, published research, quantitative research.">
-<meta property="og:title" content="Manan Jindal"><meta property="og:description" content="I build fast, reliable AI systems. IIT Kanpur, 2027.">
-<meta property="og:image" content="https://mananj23.github.io/og.png"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image">
-<title>Manan Jindal</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<!doctype html>
+<html lang="en" data-type="software" data-radius="soft" data-ground="sage" data-buttons="solid" data-motion>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Manan Jindal: AI engineer from IIT Kanpur, graduating 2027</title>
+<meta name="description" content="Final-year IIT Kanpur student. Cut a Goldman Sachs AI assistant's latency by 50–60%, co-wrote a Springer journal paper, ranked 81st globally at Trexquant.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Manan Jindal, AI engineer from IIT Kanpur">
+<meta property="og:description" content="Goldman Sachs AI engineering intern. Open to 2027 roles in software, AI and quant.">
+<meta property="og:image" content="https://mananj23.github.io/share.jpg">
+<link rel="canonical" href="https://mananj23.github.io/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Manan Jindal","jobTitle":"Software and AI Engineer","alumniOf":{"@type":"CollegeOrUniversity","name":"Indian Institute of Technology Kanpur"},"email":"mailto:mananj23@iitk.ac.in","sameAs":["https://github.com/mananj23","https://www.linkedin.com/in/manan-jindal-7830ba27a/"],"knowsAbout":["Large language models","Information retrieval","Quantitative research","Python"]}</script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<meta name="theme-color" content="#ffffff">
+<meta name="site-kind" content="software">
+<meta name="page-type" content="software">
+<link rel="preload" href="assets/fonts/funnel-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/funnel-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/system.css">
+<link rel="stylesheet" href="assets/ui/cards.css">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<link rel="stylesheet" href="assets/backgrounds/backgrounds.css">
+<link rel="stylesheet" href="assets/layout/layout.css">
+<link rel="stylesheet" href="assets/icons/icon.css">
 <style>
-/* Layout: dark signal-lab. Hero with live signal field + 30-second summary for skimming recruiters, then interactive proof:
-   a latency race, a real backtest curve, a spike-train raster. Command palette (Ctrl/Cmd+K) and a recruiter mode. Single committed dark look. */
-:root{
-  --bg:#070B14; --bg2:#0B1220; --card:#0E1627; --card2:#111B2F; --line:#1C2840; --line2:#2A3A58;
-  --ink:#EAF0F7; --muted:#8D9BB1; --dim:#5A6780;
-  --cyan:#5EEAD4; --amber:#F7B955; --cyan-soft:rgba(94,234,212,.12); --amber-soft:rgba(247,185,85,.12);
-  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
-  --body:"Geist","Segoe UI",system-ui,sans-serif;
-  --mono:"Geist Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
-  color-scheme:dark;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--bg)}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:inherit}
-::selection{background:var(--cyan);color:var(--bg)}
-:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
-button{font:inherit;color:inherit}
-.wrap{max-width:1140px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-
-/* scroll progress (scroll-driven animation) */
-.progress{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);height:2px;z-index:30;background:linear-gradient(90deg,var(--cyan),var(--amber));transform-origin:0 50%;transform:scaleX(0)}
-@supports (animation-timeline: scroll()){.progress{animation:grow linear both;animation-timeline:scroll(root)}@keyframes grow{to{transform:scaleX(1)}}}
-
-/* nav */
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:20;background:var(--bg)}
-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10}
-nav .bar{margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 8px 8px 16px;border:1px solid var(--line);border-radius:999px;background:rgba(9,14,27,.72);backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%)}
-.mark{font:500 14px/1 var(--mono);text-decoration:none;display:flex;align-items:center;gap:8px;white-space:nowrap}
-.mark i{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
-.navr{display:flex;align-items:center;gap:4px}
-nav ul{display:flex;gap:2px;list-style:none;margin:0;padding:0}
-nav ul a{display:block;padding:7px 11px;border-radius:999px;text-decoration:none;color:var(--muted);font-size:14px;transition:background .2s,color .2s}
-nav ul a:hover{background:var(--card);color:var(--ink)}
-.kbtn{display:inline-flex;align-items:center;gap:8px;padding:6px 8px 6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card);cursor:pointer;color:var(--muted);font-size:13px}
-.kbtn kbd,.kbd{font:500 11px/1 var(--mono);padding:4px 6px;border-radius:6px;border:1px solid var(--line2);background:var(--bg2);color:var(--ink)}
-.kbtn:hover{color:var(--ink);border-color:var(--line2)}
-.rbtn{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;border:1px solid var(--cyan);background:var(--cyan);color:#04201C;font-size:13px;font-weight:600;cursor:pointer}
-.rbtn[aria-pressed="true"]{background:transparent;color:var(--cyan)}
-
-/* hero */
-.hero{position:relative;margin-top:calc(-1 * (env(safe-area-inset-top,0px) + 62px));padding-top:calc(env(safe-area-inset-top,0px) + 140px);padding-bottom:40px;overflow:hidden;isolation:isolate}
-#field{position:absolute;inset:0;width:100%;height:100%;z-index:-1;display:block}
-.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:180px;background:linear-gradient(transparent,var(--bg));z-index:-1;pointer-events:none}
-.chip{display:inline-flex;align-items:center;gap:10px;font:500 12px/1 var(--mono);letter-spacing:.05em;color:var(--muted);padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(12,19,34,.75);backdrop-filter:blur(8px)}
-.chip b{color:var(--cyan);font-weight:500}
-.pulse{width:7px;height:7px;border-radius:50%;background:var(--cyan);animation:pulse 2s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(94,234,212,.6)}70%{box-shadow:0 0 0 9px rgba(94,234,212,0)}100%{box-shadow:0 0 0 0 rgba(94,234,212,0)}}
-h1{font:800 clamp(52px,10.5vw,132px)/.9 var(--display);letter-spacing:-.045em;margin:24px 0 22px;text-wrap:balance}
-.rot{display:inline-block;background:linear-gradient(100deg,var(--cyan),var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent;transition:opacity .35s,transform .35s}
-.rot.out{opacity:0;transform:translateY(.15em)}
-.lede{font-size:clamp(18px,2.2vw,22px);line-height:1.5;color:var(--muted);max-width:36em;margin:0 0 30px}
-.lede strong{color:var(--ink);font-weight:500}
-.actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.btn{display:inline-flex;align-items:center;gap:8px;font:500 15px/1 var(--body);padding:13px 18px;border-radius:12px;text-decoration:none;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;transition:transform 120ms cubic-bezier(.2,.8,.2,1),border-color 120ms,background 120ms}
-.btn svg.arr{transition:transform 120ms cubic-bezier(.2,.8,.2,1)}
-@media (hover:hover) and (pointer:fine){.btn:hover{transform:translateY(-1px);border-color:var(--line2);background:var(--card2);transition-duration:150ms}.btn:hover svg.arr{transform:translateX(3px);transition-duration:150ms}}
-.btn:focus-visible{transform:translateY(-1px);border-color:var(--cyan)}
-.btn:active{transform:translateY(1px) scale(.985);transition-duration:90ms}
-.btn.primary{background:var(--cyan);color:#04201C;border-color:var(--cyan);box-shadow:0 10px 30px -10px rgba(94,234,212,.6)}
-@media (hover:hover) and (pointer:fine){.btn.primary:hover{background:#86F5E3}}
-.btn svg{width:16px;height:16px;flex:none}
-
-/* 30-second summary */
-#tldr{padding-block:28px 10px}
-.tldr{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:1px solid var(--line);border-radius:20px;background:rgba(14,22,39,.8);backdrop-filter:blur(10px);overflow:hidden}
-.tldr .h{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--line);font:500 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
-.tldr .h span:last-child{color:var(--cyan)}
-.fact{padding:20px;border-right:1px solid var(--line);min-width:0}
-.fact:last-child{border-right:0}
-.fact b{display:block;font:800 clamp(26px,3vw,36px)/1 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.fact span{display:block;margin-top:8px;font-size:13.5px;line-height:1.45;color:var(--muted)}
-.fact b.c{color:var(--cyan)}
-
-/* marquee */
-.marquee{margin-top:56px;border-block:1px solid var(--line);overflow:hidden;padding-block:15px;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
-.mq{display:flex;gap:40px;width:max-content;animation:mq 40s linear infinite;font:500 14px/1 var(--mono);color:var(--dim)}
-.mq span{display:flex;align-items:center;gap:40px;white-space:nowrap}
-.mq span::after{content:"◆";font-size:7px;color:var(--line2)}
-@keyframes mq{to{transform:translateX(-50%)}}
-
-/* sections */
-section{padding-block:100px}
-.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin:0 0 14px;display:flex;gap:10px;align-items:center}
-.eyebrow::before{content:"";width:22px;height:1px;background:var(--cyan)}
-h2{font:600 clamp(34px,5.4vw,62px)/1 var(--display);letter-spacing:-.035em;margin:0 0 42px;text-wrap:balance;max-width:17ch}
-h2 em{font-style:normal;color:var(--muted)}
-
-/* flagship case study */
-.flag{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:18px}
-.panel{position:relative;border:1px solid var(--line);border-radius:22px;background:var(--card);padding:28px;min-width:0;overflow:hidden}
-.meta{font:500 11px/1.5 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin:0 0 10px}
-.panel h3{font:600 clamp(24px,2.8vw,32px)/1.12 var(--display);letter-spacing:-.02em;margin:0 0 14px}
-.big{font:800 clamp(48px,7vw,84px)/.9 var(--display);letter-spacing:-.045em;background:linear-gradient(180deg,#C2FFF4,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
-.biglab{font:400 13px/1.4 var(--mono);color:var(--muted);margin:6px 0 20px}
-.steps{display:grid;gap:0}
-.step{display:grid;grid-template-columns:92px minmax(0,1fr);gap:14px;padding-block:12px;border-top:1px solid var(--line);font-size:15px}
-.step b{font:500 11px/1.9 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--cyan)}
-.step span{color:#C7D2E0}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
-.tags span{font:400 12px/1 var(--mono);padding:7px 9px;border-radius:8px;background:rgba(255,255,255,.03);border:1px solid var(--line);color:var(--muted)}
-
-/* latency race */
-.race h4{font:500 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin:0 0 18px;display:flex;justify-content:space-between;gap:10px;align-items:center}
-.lane{margin-bottom:22px}
-.lane .lt{display:flex;justify-content:space-between;font:500 13px/1 var(--mono);color:var(--muted);margin-bottom:9px}
-.lane .lt b{color:var(--ink);font-weight:500;font-variant-numeric:tabular-nums}
-.pipe{display:flex;gap:4px;height:38px}
-.stage{position:relative;border-radius:8px;border:1px solid var(--line);overflow:hidden;display:flex;align-items:center;justify-content:center;font:500 11.5px/1 var(--mono);color:var(--dim);background:var(--bg2)}
-.stage i{position:absolute;inset:0;transform-origin:0 50%;transform:scaleX(1)}
-.stage span{position:relative;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 6px}
-.stage.llm{flex:1}.stage.llm i{background:linear-gradient(90deg,rgba(247,185,85,.22),rgba(247,185,85,.38))}.stage.llm span{color:#FAD9A1}
-.stage.lk{flex:.32}.stage.lk i{background:linear-gradient(90deg,rgba(94,234,212,.22),rgba(94,234,212,.42))}.stage.lk span{color:var(--cyan)}
-.stage.ex{flex:.9}.stage.ex i{background:rgba(234,240,247,.08)}.stage.ex span{color:var(--muted)}
-.after .pipe{width:46%}
-.race .note{font-size:13px;color:var(--dim);margin:6px 0 0}
-.race .note b{color:var(--cyan);font-weight:500}
-.run{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;border:1px solid var(--line2);background:var(--bg2);cursor:pointer;font:500 12px/1 var(--mono);color:var(--ink);letter-spacing:.04em;text-transform:none}
-.run:hover{border-color:var(--cyan);color:var(--cyan)}
-details{margin-top:18px;border-top:1px solid var(--line);padding-top:14px}
-summary{cursor:pointer;font:500 13px/1.4 var(--mono);color:var(--cyan);list-style:none}
-summary::-webkit-details-marker{display:none}
-summary::before{content:"+ ";}
-details[open] summary::before{content:"− "}
-details p{color:var(--muted);font-size:15px;margin:10px 0 0}
-
-.flow{margin-top:22px;border-top:1px solid var(--line);padding-top:18px}
-.flow h5{font:500 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin:0 0 14px}
-.flow ol{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.flow li{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--bg2);font-size:14px}
-.flow li b{font:500 12px/1 var(--mono);color:var(--cyan);text-align:center}
-.flow li span{color:#C7D2E0;min-width:0}
-.flow li em{font:400 11px/1 var(--mono);font-style:normal;color:var(--dim);white-space:nowrap}
-.flow li.hot{border-color:rgba(94,234,212,.45);background:linear-gradient(90deg,rgba(94,234,212,.08),var(--bg2))}
-@media (max-width:620px){.flow li em{display:none}.flow li{grid-template-columns:24px minmax(0,1fr)}}
-/* leadership */
-.lead{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:18px}
-.igts{position:relative;border-radius:24px;padding:2px;background:linear-gradient(140deg,rgba(247,185,85,.7),rgba(94,234,212,.35) 55%,var(--line))}
-.igts .in{border-radius:22px;background:var(--card);padding:30px;height:100%;display:flex;flex-direction:column;gap:14px}
-.igts .role{font:500 12px/1.5 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin:0}
-.igts h3{font:700 clamp(28px,3.6vw,42px)/1.05 var(--display);letter-spacing:-.03em;margin:0}
-.igts p{margin:0;color:var(--muted)}
-.inums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:4px}
-.inums div{border:1px solid var(--line);border-radius:14px;padding:14px;background:var(--bg2)}
-.inums b{display:block;font:800 clamp(26px,3vw,36px)/1 var(--display);letter-spacing:-.03em;color:var(--ink)}
-.inums span{display:block;font-size:12.5px;line-height:1.4;color:var(--muted);margin-top:6px}
-.topics{display:flex;flex-wrap:wrap;gap:6px}
-.topics span{font:400 12px/1 var(--mono);padding:7px 9px;border-radius:999px;border:1px solid rgba(247,185,85,.35);color:#F9D59A;background:rgba(247,185,85,.06)}
-.game{border:1px solid var(--line);border-radius:24px;background:var(--card);padding:26px;display:flex;flex-direction:column;gap:14px;min-width:0}
-.game h4{font:500 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin:0}
-.game h3{font:600 22px/1.2 var(--display);margin:0;letter-spacing:-.015em}
-.pm{display:grid;grid-template-columns:auto 1fr 1fr;gap:6px;font:500 13px/1 var(--mono)}
-.pm .hd{color:var(--dim);display:flex;align-items:center;justify-content:center;padding:6px;text-align:center}
-.pm .rh{justify-content:flex-start}
-.cell{border:1px solid var(--line);border-radius:12px;background:var(--bg2);padding:16px 8px;cursor:pointer;text-align:center;color:var(--ink);transition:border-color .2s,background .2s,transform .2s}
-.cell:hover{border-color:var(--line2);transform:translateY(-1px)}
-.cell .y{color:var(--cyan)}.cell .t{color:var(--amber)}
-.cell[aria-pressed="true"]{border-color:var(--cyan);background:rgba(94,234,212,.08)}
-.cell.nash{box-shadow:inset 0 0 0 1px rgba(247,185,85,.6)}
-.gout{min-height:4.8em;font-size:14.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin:0}
-.gout b{color:var(--ink)}
-.roles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
-.roles .tile{grid-column:auto}
-.tile p.meta{font:500 11px/1.5 var(--mono);letter-spacing:.1em;color:var(--dim)}
-.game .gnote{margin-top:auto;font:400 12px/1.5 var(--mono);color:var(--dim)}
-@media (max-width:980px){.lead,.roles{grid-template-columns:minmax(0,1fr)}}
-/* bento */
-.bento{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;margin-top:16px}
-.tile{--x:50%;--y:50%;position:relative;grid-column:span 2;border:1px solid var(--line);border-radius:22px;padding:24px;background:var(--card);overflow:hidden;display:flex;flex-direction:column;gap:10px;min-width:0;transition:border-color .3s,transform .3s}
-.tile::before,.panel::before{content:"";position:absolute;inset:0;background:radial-gradient(460px circle at var(--x) var(--y),rgba(94,234,212,.09),transparent 45%);opacity:0;transition:opacity .3s;pointer-events:none}
-.tile:hover,.panel:hover{border-color:var(--line2)}
-.tile{transition:border-color 120ms,transform 120ms cubic-bezier(.2,.8,.2,1),box-shadow 120ms}
-@media (hover:hover) and (pointer:fine){.tile:has(a):hover{transform:translateY(-2px);box-shadow:0 14px 24px -14px rgba(0,0,0,.45);transition-duration:180ms}}
-.tile:has(a:focus-visible){transform:translateY(-2px);border-color:var(--line2)}
-.tile:hover::before,.panel:hover::before{opacity:1}
-.t3{grid-column:span 3}
-.tile h3{font:600 clamp(21px,2.2vw,26px)/1.15 var(--display);letter-spacing:-.02em;margin:0}
-.tile p{margin:0;color:var(--muted);font-size:15px}
-.num{font:800 clamp(38px,5vw,60px)/.95 var(--display);letter-spacing:-.04em;background:linear-gradient(180deg,var(--ink),#9FB2C8);-webkit-background-clip:text;background-clip:text;color:transparent}
-.numlab{font:400 12.5px/1.4 var(--mono);color:var(--muted)}
-.chart{position:relative;margin:6px 0 2px;border:1px solid var(--line);border-radius:12px;background:var(--bg2);padding:10px 10px 6px}
-.chart svg{display:block;width:100%;height:auto}
-.chart .cap{font:400 11px/1.4 var(--mono);color:var(--dim);margin-top:4px;display:flex;justify-content:space-between;gap:8px}
-#raster{width:100%;height:120px;display:block;border-radius:12px;border:1px solid var(--line);background:var(--bg2)}
-.link{font:500 13px/1 var(--mono);color:var(--cyan);text-decoration:none;margin-top:auto}
-.link:hover{text-decoration:underline}
-
-/* paper */
-.paper{position:relative;border-radius:24px;padding:2px;background:linear-gradient(120deg,rgba(94,234,212,.65),rgba(247,185,85,.35) 60%,var(--line))}
-.paper .in{border-radius:22px;background:var(--card);padding:32px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:32px;align-items:center}
-.venue{font:500 12px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin:0 0 12px}
-.paper h3{font:600 clamp(24px,3vw,34px)/1.12 var(--display);letter-spacing:-.02em;margin:0 0 12px}
-.paper p{color:var(--muted);margin:0 0 14px}
-.acc{font:800 clamp(60px,8vw,96px)/.9 var(--display);letter-spacing:-.045em;color:var(--cyan)}
-.acc small{display:block;font:400 13px/1.5 var(--mono);color:var(--muted);letter-spacing:0;margin-top:8px}
-
-/* timeline */
-.tl{list-style:none;margin:0;padding:0;position:relative}
-.tl::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:linear-gradient(var(--cyan),var(--line) 40%,var(--line))}
-.tl li{position:relative;display:grid;grid-template-columns:170px minmax(0,1fr);gap:24px;padding:0 0 34px 36px}
-.tl li::before{content:"";position:absolute;left:0;top:7px;width:15px;height:15px;border-radius:50%;background:var(--bg);border:2px solid var(--dim)}
-.tl li:first-child::before{border-color:var(--cyan);box-shadow:0 0 14px var(--cyan)}
-.when{font:400 13px/1.9 var(--mono);color:var(--dim);font-variant-numeric:tabular-nums}
-.tl h3{font:600 20px/1.3 var(--display);margin:0;letter-spacing:-.01em}
-.tl h3 span{font:400 15px var(--body);color:var(--muted)}
-.tl p{margin:6px 0 0;color:var(--muted);max-width:62ch}
-
-/* record */
-.rec{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.r{border:1px solid var(--line);border-radius:18px;padding:22px;background:linear-gradient(180deg,var(--card),var(--bg2))}
-.r b{display:block;font:800 clamp(34px,4vw,46px)/1 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.r span{display:block;margin-top:10px;font-size:14px;line-height:1.45;color:var(--muted)}
-
-/* contact */
-.contact{padding-block:110px 90px}
-.contact h2{font-size:clamp(44px,8vw,108px);max-width:12ch;margin-bottom:22px}
-.contact h2 span{background:linear-gradient(100deg,var(--cyan),var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent}
-.contact p{color:var(--muted);max-width:48ch;font-size:18px;margin:0 0 28px}
-.mail{font:500 clamp(17px,2.4vw,22px)/1 var(--mono);color:var(--ink);user-select:all;padding:14px 18px;border:1px dashed var(--line2);border-radius:12px;word-break:break-all}
-.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:50;font:500 13px/1 var(--mono);padding:12px 16px;border-radius:12px;background:var(--ink);color:var(--bg);transition:opacity .25s,transform .25s}
-.toast.on{opacity:1;transform:translate(-50%,0)}
-footer{border-top:1px solid var(--line);padding-block:24px;font:400 12px/1.5 var(--mono);color:var(--dim)}
-footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-
-/* command palette */
-dialog.cmd{width:min(560px,calc(100vw - 32px));padding:0;border:1px solid var(--line2);border-radius:18px;background:rgba(12,19,34,.96);color:var(--ink);box-shadow:0 30px 80px -20px rgba(0,0,0,.8)}
-dialog.cmd::backdrop{background:rgba(3,6,12,.6);backdrop-filter:blur(4px)}
-.cmd input{width:100%;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--ink);font:400 16px/1 var(--body);padding:18px 20px;outline:none}
-.cmd ul{list-style:none;margin:0;padding:8px;max-height:min(60vh,380px);overflow:auto}
-.cmd li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;cursor:pointer;font-size:15px;color:var(--muted)}
-.cmd li small{font:400 11px/1 var(--mono);color:var(--dim)}
-.cmd li[aria-selected="true"]{background:var(--card2);color:var(--ink)}
-.cmd .foot{display:flex;gap:14px;padding:10px 16px;border-top:1px solid var(--line);font:400 11px/1 var(--mono);color:var(--dim)}
-
-/* recruiter mode: only the essentials */
-body.rmode .hide-r{display:none!important}
-body.rmode #tldr{padding-top:40px}
-
-/* hero entrance: once, on load (~1.1s); nothing moves on scroll */
-@media (prefers-reduced-motion: no-preference){
-  .hero .chip,.hero h1 .ln,.hero .lede,.hero .actions{animation:enter 700ms cubic-bezier(.22,1,.36,1) both}
-  .hero h1 .ln:nth-child(2){animation-delay:120ms}
-  .hero h1 .ln:nth-child(3){animation-delay:200ms}
-  .hero .lede{animation-delay:320ms}
-  .hero .actions{animation-delay:420ms}
-  @keyframes enter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-}
-.hero h1 .ln{display:inline-block}
-/* motion pause control */
-.mbtn{position:fixed;right:16px;bottom:16px;z-index:40;display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border-radius:10px;border:1px solid var(--line2);background:rgba(12,19,34,.85);backdrop-filter:blur(8px);color:var(--muted);font:500 12px/1 var(--mono);cursor:pointer;transition:color 120ms,border-color 120ms}
-@media (hover:hover) and (pointer:fine){.mbtn:hover{color:var(--ink);border-color:var(--cyan);transition-duration:150ms}}
-.mbtn:focus-visible{color:var(--ink);border-color:var(--cyan)}
-body.still .mq,body.still .pulse{animation-play-state:paused}
-@media (prefers-reduced-motion: reduce){.mbtn{display:none}}
-@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
-
-/* responsive */
-@media (max-width:980px){
-  .flag{grid-template-columns:minmax(0,1fr)}
-  .tldr{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .fact{border-bottom:1px solid var(--line)}
-  .fact:nth-child(odd){border-right:0}
-  .fact:last-child{grid-column:1/-1;border-bottom:0}
-  .bento{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .tile,.t3{grid-column:span 1}
-  .rec{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .paper .in{grid-template-columns:minmax(0,1fr)}
-  nav ul{display:none}
-}
-@media (max-width:620px){
-  .bento{grid-template-columns:minmax(0,1fr)}
-  .tile,.t3{grid-column:1/-1}
-  .tl li{grid-template-columns:minmax(0,1fr);gap:2px}
-  .step{grid-template-columns:minmax(0,1fr);gap:2px}
-  .after .pipe{width:70%}
-  section{padding-block:76px}
-  .kbtn .kt{display:none}
-  .panel,.paper .in{padding:22px}
-  .chip{display:inline-block;line-height:1.5}
-  .chip .pulse{display:inline-block;margin-right:8px;vertical-align:1px}
+:root {
+  --p-bg: #ffffff; --p-surface: #f3f3f3; --p-ink: #232323; --p-muted: #686868;
+  --p-accent: #a1ffcb; --p-accent-ink: #232323; --p-action: #232323; --p-action-ink: #ffffff;
+  --p-inv-bg: #232323; --p-inv-surface: #303030; --p-inv-ink: #ffffff; --p-inv-muted: #a4a4a4;
+  --p-inv-accent: #a1ffcb; --p-inv-accent-ink: #232323; --p-inv-action: #a1ffcb; --p-inv-action-ink: #232323;
+  --font-display: "Funnel Display", system-ui, sans-serif;
+  --font-text: "Funnel Sans", system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --display-weight: 400;
+  --display-tracking: -0.03em;
+  --display-tracking-xl: -0.04em;
+  --ly-scale: 0.98;
 }
 </style>
-</head><body>
+<link rel="stylesheet" href="assets/ui/base.css">
+<link rel="stylesheet" href="assets/ui/window/fragment.css">
+<link rel="stylesheet" href="assets/ui/pipeline-board/fragment.css">
+<link rel="stylesheet" href="assets/ui/checklist/fragment.css">
+<link rel="stylesheet" href="assets/ui/doc/fragment.css">
+<link rel="stylesheet" href="assets/moments/letters-assemble/moment.css">
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+<script src="assets/backgrounds/backgrounds.js"></script>
+<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+<link rel="modulepreload" href="assets/moments/moments.js">
+<link rel="modulepreload" href="assets/moments/lib.js">
+<link rel="modulepreload" href="assets/moments/letters-assemble/moment.js">
+<style>
+/* hero art: the lit sage ground with one soft light, and the small result card over the window */
+.hero__art { background:
+    radial-gradient(70% 60% at 18% 12%, color-mix(in oklab, var(--ground-surface) 80%, white), transparent 70%),
+    radial-gradient(60% 50% at 90% 100%, color-mix(in oklab, var(--ground-bg) 80%, var(--ground-accent)), transparent 70%),
+    var(--ground-bg); }
+.hero__art > .ly-piece--note { left: var(--s-6); bottom: var(--s-6); width: 300px; z-index: 2; }
+.hero__art .ui-win__main { padding-right: var(--ly-cut-room); }
+.hero__proof { font-size: var(--t-small); color: var(--ink); }
+#statement .mo-la__sub { color: var(--ink); }
+.d-card { background: #fff; color: #16181a; border-radius: 12px; padding: 14px 16px; font: 400 14px/1.4 var(--font-text); box-shadow: 0 0 0 1px rgb(0 0 0 / .07), 0 18px 44px -20px rgb(0 0 0 / .45); }
+.d-card h5 { margin: 0; font: 600 14px/1.3 var(--font-text); }
+.d-card__row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 4px; }
+.d-chip { display: inline-flex; align-items: center; gap: 5px; height: 22px; padding: 0 8px; border-radius: 99px; font-size: 13px; font-weight: 500; background: #e7f4ec; color: #17673f; white-space: nowrap; }
+.d-chip::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.d-note__line { display: flex; align-items: center; gap: 10px; padding: 7px 0; font-size: 13px; color: #3d4247; border-top: 1px solid rgb(0 0 0 / .06); }
+.d-note__line i { width: 18px; height: 18px; border-radius: 50%; flex: none; display: grid; place-items: center; background: #e7f4ec; color: #17673f; font-style: normal; font-size: 12px; font-weight: 700; }
+.d-note__line b { font-weight: 600; color: #16181a; }
+.ui-win__st.is-cut { background: #fbe6e3; color: #a3271b; }
+@media (max-width: 1023px) { .hero__art > .ly-piece--note { left: var(--s-4); bottom: var(--s-4); width: 270px; } }
+
+/* the work window: app-frame recipe */
+.app.ui { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); margin-top: var(--s-7); background: var(--u-bg); border: 1px solid var(--u-border); border-radius: var(--u-r); box-shadow: var(--u-shadow); }
+.app > .app__pane { position: relative; min-width: 0; min-height: 0; overflow: hidden; }
+.app > .app__pane + .app__pane { border-left: 1px solid var(--u-line); }
+.app > .app__pane > .ui-panel { width: 100%; border: 0; border-radius: 0; box-shadow: none; }
+.app > .app__pane::after { content: ""; position: absolute; inset: auto 0 0 0; height: 64px; background: linear-gradient(transparent, var(--u-bg)); pointer-events: none; }
+@media (min-width: 1024px) and (max-width: 1279px) { .app.ui { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); } }
+@media (max-width: 1023px) {
+  .app.ui { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
+  .app > .app__pane--list { max-height: 252px; }
+  .app > .app__pane--list::after { display: none; }
+  .app .ui-win__side { display: none; }
+  .app .ui-win__body { grid-template-columns: minmax(0, 1fr); }
+  .app > .app__pane + .app__pane { border-left: 0; border-top: 1px solid var(--u-line); }
+}
+@media (max-width: 639px) {
+  .app.ui { grid-template-rows: minmax(0, 1fr); }
+  .app > .app__pane--list { display: none; }
+  .app > .app__pane + .app__pane { border-top: 0; }
+}
 
 
-<div class="progress" aria-hidden="true"></div>
-<button class="mbtn" id="mbtn" type="button" aria-pressed="false">❚❚ Pause motion</button>
+/* the open pane's comparison under the run */
+.cmp { padding: 20px 24px 24px; border-top: 1px solid var(--u-line); font: 400 13px/1.4 var(--font-text); color: #3d4247; }
+.cmp__t { margin: 0 0 14px; font-weight: 600; color: #16181a; font-size: 14px; }
+.cmp__lane { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 12px; align-items: center; margin-bottom: 10px; }
+.cmp__k { font: 500 12px/1 var(--font-mono); color: #6b7076; }
+.cmp__bar { display: flex; gap: 4px; height: 34px; }
+.cmp__bar--after { width: 45%; }
+.cmp__bar i { flex: 1; display: grid; place-items: center; border-radius: 8px; font: 500 12px/1 var(--font-mono); font-style: normal; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 0 6px; }
+.cmp__bar .llm { background: #fbe6e3; color: #a3271b; }
+.cmp__bar .lk { background: #a1ffcb; color: #10402a; flex: .6; }
+.cmp__bar .ex { background: #eef0ee; color: #3d4247; flex: .9; }
+.cmp__n { margin: 14px 0 0; }
+.cmp__n b { color: #16181a; font-weight: 600; }
+@media (max-width: 1279px) { .cmp { display: none; } }
 
-<nav aria-label="Site">
-  <div class="wrap">
-    <div class="bar">
-      <a class="mark" href="#top"><i aria-hidden="true"></i>manan.jindal</a>
-      <div class="navr">
-        <ul>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#research">Research</a></li>
-          <li><a href="#leadership">Leadership</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button class="kbtn" id="openCmd" type="button" aria-label="Open command menu"><span class="kt">Jump to</span><kbd id="kmod">Ctrl K</kbd></button>
-        <button class="rbtn" id="rmode" type="button" aria-pressed="false">Recruiter mode</button>
-      </div>
+
+/* splits that fill their screen */
+@media (min-width: 1024px) { .frame--split.tall { --ratio: 108%; } }
+.intern { margin-top: var(--s-6); }
+.intern .rows__value { font: 400 14px/1.6 var(--font-mono); color: var(--ink); }
+@media (max-width: 639px) { .intern > li { grid-template-columns: minmax(0, 1fr); } .intern .rows__value { grid-column: 1; grid-row: auto; text-align: left; max-width: none; } }
+@media (max-width: 639px) { #paper .ui-doc__note { display: none; } }
+
+/* leadership: three open cards, each a different picture */
+.lead-cards > .card { grid-column: 1 / -1; }
+@media (min-width: 1024px) { .lead-cards > .card { grid-column: auto / span 4; } }
+.lead-cards .panel { --p-h: 340px; position: relative; background: radial-gradient(80% 70% at 20% 0%, color-mix(in oklab, var(--ground-surface) 80%, white), transparent 70%), var(--ground-bg); }
+.lead-cards .pd, .lead-cards .lst, #projects .lst { position: absolute; left: 20px; right: 20px; top: 24px; }
+.d-h { margin: 0; font: 600 14px/1.3 var(--font-text); color: #16181a; }
+.pd .d-card { padding: 16px; }
+.pd__grid { display: grid; grid-template-columns: minmax(0, .9fr) 1fr 1fr; gap: 6px; margin-top: 12px; align-items: center; }
+.pd__hd { font: 500 12px/1.3 var(--font-mono); color: #4a4f55; text-align: center; }
+.pd__hd--row { text-align: left; }
+.pd__cell { height: 44px; border-radius: 10px; border: 1px solid rgb(0 0 0 / .12); background: #fff; font: 500 15px/1 var(--font-mono); color: #16181a; cursor: pointer; transition: border-color 120ms, background 120ms; }
+@media (hover: hover) and (pointer: fine) { .pd__cell:hover { border-color: #16181a; transition-duration: 150ms; } }
+.pd__cell:focus-visible { outline: 2px solid #16181a; outline-offset: 2px; }
+.pd__cell[aria-pressed="true"] { background: #e7f4ec; border-color: #17673f; }
+.pd__cell.is-nash { background: #a1ffcb; border-color: #16181a; }
+.pd__out { min-height: 3em; margin: 12px 0 0; padding-top: 10px; border-top: 1px solid rgb(0 0 0 / .08); font-size: 13px; line-height: 1.45; color: #3d4247; }
+.pd__out b { color: #16181a; font-weight: 600; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.chips span { font: 500 13px/1 var(--font-text); padding: 8px 10px; border-radius: 99px; background: #eef4f0; color: #1f3a2c; }
+
+@media (max-width: 639px) { .lead-cards .panel { --p-h: 335px; } .lead-cards .pd, .lead-cards .lst { left: 16px; right: 16px; top: 16px; } }
+
+/* phones: the run's header keeps its chip; the comparison stays on wider screens */
+@media (max-width: 639px) { .ui-pipe__total { display: none; } .cmp { display: none; } }
+
+
+.d-ic { width: 18px; height: 18px; flex: none; }
+.find { display: grid; padding: 6px 16px; margin-top: var(--s-5); max-width: 420px; }
+.find a { display: grid; grid-template-columns: 28px auto minmax(0, 1fr); align-items: center; gap: 12px; min-height: 48px; border-top: 1px solid rgb(0 0 0 / .07); color: #16181a; text-decoration: none; font-weight: 500; }
+.find a:first-child { border-top: 0; }
+.find a img { width: 28px; height: 28px; }
+.find a span { justify-self: end; color: #4a4f55; font-weight: 400; font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media (hover: hover) and (pointer: fine) { .find a:hover span { color: #16181a; } }
+#paper .frame--split .stage { position: absolute; inset: 0; }
+@media (min-width: 1024px) { #paper .ui-doc { width: 540px; } }
+
+
+.stackcard { position: absolute; left: var(--s-7); right: var(--s-7); top: var(--s-7); padding: 18px 20px; }
+.stackcard ul { list-style: none; margin: 8px 0 0; padding: 0; }
+.stackcard li { display: grid; grid-template-columns: 30px minmax(0, 1fr) auto; align-items: center; gap: 12px; min-height: 52px; border-top: 1px solid rgb(0 0 0 / .07); font-size: 14px; color: #16181a; }
+.stackcard li img { width: 26px; height: 26px; }
+.stackcard li b { font-weight: 600; }
+.stackcard li span { color: #3d4247; text-align: right; }
+@media (max-width: 1023px) { .stackcard { left: var(--s-5); right: var(--s-5); top: var(--s-5); } }
+@media (max-width: 639px) { .stackcard { left: var(--s-4); right: var(--s-4); top: var(--s-4); padding: 12px 14px; } .stackcard li { min-height: 40px; font-size: 13px; } .stackcard li:nth-child(n+6) { display: none; } }
+
+/* tablets: the stacked sections take two screens */
+@media (min-width: 640px) and (max-width: 1023px) {
+  #leadership { --h: 2; }
+  #leadership .lead-cards .panel { --p-h: 440px; }
+  :is(#internships, #paper, #questions) .wrap > .grid { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; }
+  :is(#internships, #paper, #questions) .wrap > .grid > :first-child { grid-column: 1 / span 5; }
+  :is(#internships, #paper, #questions) .wrap > .grid > :last-child { grid-column: 7 / span 6; }
+  .footer__legal > span:nth-of-type(2) { display: none; }
+  :is(#internships, #paper) .frame--split { --ratio: 150%; align-self: start; }
+  :is(#internships, #paper) .frame--split { --ratio: 210%; }
+  .intern > li > p { display: none; }
+  #paper .ui-doc__note { display: none; }
+}
+/* projects: four panels on the lit ground */
+#projects .panel { --p-h: 300px; background: radial-gradient(80% 70% at 20% 0%, color-mix(in oklab, var(--ground-surface) 80%, white), transparent 70%), var(--ground-bg); }
+#projects .d-card { width: 100%; }
+#projects .panel { position: relative; }
+@media (min-width: 640px) { #projects .lst { left: max(24px, 50% - 220px); right: max(24px, 50% - 220px); top: 40px; } }
+.pnl-card .d-chart { display: block; width: 100%; height: 196px; margin-top: 10px; }
+.pnl-card .d-chart path.ln { fill: none; stroke: #17673f; stroke-width: 2.5; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.pnl-card .d-chart path.ar { fill: #a1ffcb; opacity: .45; }
+.pnl-card .d-chart line { stroke: rgb(0 0 0 / .12); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.pnl-card .d-axis { display: flex; justify-content: space-between; font: 400 12px/1 var(--font-mono); color: #6b7076; margin-top: 6px; }
+@media (max-width: 639px) { #projects .panel { --p-h: 150px; } #projects-h .muted { display: none; } #paper .facts { display: none; } #internships .frame--split { --ratio: 92%; } #projects .lst .d-note__line:nth-of-type(n+3) { display: none; } #questions .faq__item:is(:nth-child(2), :nth-child(5)) { display: none; } #questions-h + p { display: none; } .intern > li > p { display: none; } .intern > li { padding-block: 12px; } .footer__lede, .footer__legal > span:nth-of-type(2) { display: none; } .pnl-card .d-chart { height: 64px; } #statement .mo-la__type { font-size: 76px; line-height: 1; } }
+
+/* paper and leadership splits: the frame holds its piece on the lit ground */
+.frame--split.lit { background: radial-gradient(70% 60% at 20% 10%, color-mix(in oklab, var(--ground-surface) 80%, white), transparent 70%), var(--ground-bg); }
+.frame--split .dg { position: absolute; inset: var(--s-6); }
+.facts { display: grid; gap: var(--s-3); margin: var(--s-5) 0; padding: 0; list-style: none; }
+.facts li { padding-top: var(--s-3); border-top: 1px solid var(--line); }
+.facts b { font-weight: 500; }
+
+
+</style>
+</head>
+<body>
+<!-- type: software (a personal portfolio, read like a product page: what he does, shown in his own work)
+     deal: hero collage, palette white-mint-tiles, type funnel, nav nav-cards -> nav-centre (no photographs for its cards),
+           close close-type, footer footer-dark, rhythm space, buttons solid, mark ring, grounds lit sage in frames
+     moments: letters-assemble in #statement (iris-opens dealt second: the page has under eight sections, so one moment) -->
+<header class="nav nav--centre">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#work">Skip to content</a>
+    <a class="nav__logo" href="#top"><span class="mark" data-mark="ring" aria-hidden="true"></span>Manan Jindal</a>
+    <nav class="nav__links" aria-label="Main">
+      <div class="nav__item"><a class="nav__link" href="#work">Work</a></div>
+      <div class="nav__item"><a class="nav__link" href="#internships">Internships</a></div>
+      <div class="nav__item"><a class="nav__link" href="#projects">Projects</a></div>
+      <div class="nav__item"><a class="nav__link" href="#paper">Paper</a></div>
+      <div class="nav__item"><a class="nav__link" href="#questions">FAQ</a></div>
+    </nav>
+    <div class="nav__actions">
+      <a class="nav__link" href="resume.pdf">Résumé</a>
+      <a class="btn btn--primary" href="mailto:mananj23@iitk.ac.in">Email Manan</a>
     </div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
   </div>
-</nav>
+</header>
 
 <main id="top">
-  <header class="hero">
-    <canvas id="field" aria-hidden="true"></canvas>
-    <div class="wrap">
-      <span class="chip"><span class="pulse" aria-hidden="true"></span>Open to <b>2027</b> software, AI and quant roles</span>
-      <h1><span class="ln">Manan Jindal</span><br><span class="sr">builds </span><span class="ln"><span aria-hidden="true">builds </span><span class="rot" id="rot">fast AI.</span></span></h1>
-      <p class="lede">Final-year at <strong>IIT Kanpur</strong>. At <strong>Goldman Sachs</strong> I took three LLM calls off the critical path of a production assistant and cut its latency by <strong>50–60%</strong>, with no loss in accuracy.</p>
-      <div class="actions">
-        <a class="btn primary" href="#work">See the work
-          <svg class="arr" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <a class="btn" href="https://github.com/mananj23" target="_blank" rel="noopener">
-          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.71 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/manan-jindal-7830ba27a/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 1.15C0 .52.52 0 1.17 0h13.66C15.48 0 16 .52 16 1.15v13.7c0 .63-.52 1.15-1.17 1.15H1.17C.52 16 0 15.48 0 14.85V1.15Zm4.94 12.24V6.17H2.54v7.22h2.4ZM3.74 5.18c.84 0 1.36-.55 1.36-1.25-.02-.71-.52-1.25-1.34-1.25-.82 0-1.36.54-1.36 1.25 0 .7.52 1.25 1.33 1.25h.01Zm4.91 8.21V9.36c0-.22.02-.43.08-.59.17-.43.57-.88 1.23-.88.87 0 1.22.66 1.22 1.64v3.86h2.4V9.25c0-2.22-1.18-3.25-2.76-3.25-1.27 0-1.84.7-2.16 1.19v.03h-.02l.02-.03V6.17h-2.4c.03.68 0 7.22 0 7.22h2.4Z"/></svg>LinkedIn</a>
-        <a class="btn" href="resume.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0 3-3m-3 3L5 7M3 13h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Resume</a>
+  <section class="hero hero--collage" data-enter aria-labelledby="hero-h">
+    <div class="wrap"><div class="hero-text grid hero__grid">
+      <div class="hero__text span-5">
+        <h1 id="hero-h">Manan Jindal, AI engineer from IIT Kanpur</h1>
+        <p class="hero__lead">Graduating in 2027. At Goldman Sachs I took three LLM calls off a production assistant's critical path and cut its latency by 50–60%.</p>
+        <div class="btn-row"><a class="btn btn--primary" href="mailto:mananj23@iitk.ac.in">Email Manan<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a><a class="btn btn--secondary" href="resume.pdf">Download résumé</a></div>
+        <p class="hero__proof">Goldman Sachs, Wadhwani AI, a Springer journal paper and JEE Advanced rank 1287.</p>
       </div>
-    </div>
-  </header>
-
-  <div id="tldr">
-    <div class="wrap">
-      <div class="tldr">
-        <div class="h"><span>The 30-second version</span><span>IIT Kanpur · 2027</span></div>
-        <div class="fact"><b class="c">50–60%</b><span>latency cut on a production AI assistant at Goldman Sachs</span></div>
-        <div class="fact"><b>4</b><span>internships, incl. Goldman Sachs · founder, IITK chapter of the Indian Game Theory Society</span></div>
-        <div class="fact"><b>Paper</b><span>accepted, Journal of Computational Neuroscience (Springer)</span></div>
-        <div class="fact"><b>#81</b><span>global rank, Trexquant Alpha Challenge · Gold at WorldQuant</span></div>
-        <div class="fact"><b>1287</b><span>All India Rank, JEE Advanced 2023 · top 0.8%</span></div>
+      <div class="hero__art span-6 start-7" role="img" aria-label="A query trace: three LLM calls removed, replaced by a shortlist, a reranker and a stored template; latency down 50 to 60 percent">
+        <div class="ly-piece ly-piece--main" aria-hidden="true">
+          <div class="ui ui-panel ui-win" data-ui="window" data-open="Waiting" data-work="Working" data-done="Added">
+            <div class="ui-win__bar">
+              <span class="ui-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="ui-win__crumb">Advisor assistant <i>/</i> <b>Query trace</b></span>
+              <span class="ui-spacer"></span>
+            </div>
+            <div class="ui-win__body">
+              <nav class="ui-win__side" aria-hidden="true">
+                <span class="ui-win__nav is-on"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M2.5 8h3l2-4 2 8 2-4h2"/></svg>Trace<em>6</em></span>
+                <span class="ui-win__nav"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M3 3.5h10v9H3z"/><path d="M3 7h10"/></svg>Templates</span>
+                <span class="ui-win__nav"><svg class="ui-icon" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3"/></svg>Ranking</span>
+              </nav>
+              <div class="ui-win__main">
+                <div class="ui-win__cols" aria-hidden="true"><span>Step</span><span>How</span><span>Change</span><span>When</span></div>
+                <ul class="ui-win__rows">
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="2">1</span><span class="ui-win__who">Intent</span><span class="ui-win__sub">LLM call</span><span class="ui-win__st is-cut" data-st>Removed</span><span class="ui-win__age">Before</span></li>
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="2">2</span><span class="ui-win__who">Planning</span><span class="ui-win__sub">LLM call</span><span class="ui-win__st is-cut" data-st>Removed</span><span class="ui-win__age">Before</span></li>
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="2">3</span><span class="ui-win__who">Tool selection</span><span class="ui-win__sub">LLM call</span><span class="ui-win__st is-cut" data-st>Removed</span><span class="ui-win__age">Before</span></li>
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="4">A</span><span class="ui-win__who">Shortlist</span><span class="ui-win__sub">BM25 + fuzzy</span><span class="ui-win__st is-done" data-st>Added</span><span class="ui-win__age">After</span></li>
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="4">B</span><span class="ui-win__who">Rerank</span><span class="ui-win__sub">Cross-encoder</span><span class="ui-win__st is-done" data-st>Added</span><span class="ui-win__age">After</span></li>
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="4">C</span><span class="ui-win__who">Template</span><span class="ui-win__sub">MongoDB</span><span class="ui-win__st is-done" data-st>Added</span><span class="ui-win__age">After</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ly-piece ly-piece--note d-card" aria-hidden="true" data-ly-steps="700">
+          <div class="ui d-card__row"><h5>Same query, after</h5><span class="d-chip" data-step data-step-at="4">In production</span></div>
+          <div class="d-note__line" data-step><i>✓</i><span><b>3 LLM calls</b> off the critical path</span></div>
+          <div class="d-note__line" data-step><i>✓</i><span>Execution accuracy <b>unchanged</b></span></div>
+          <div class="d-note__line" data-step><i>✓</i><span>Latency down <b>50–60%</b></span></div>
+        </div>
       </div>
-    </div>
-  </div>
+    </div></div>
+  </section>
 
-  <div class="marquee hide-r" aria-label="Tools I work with">
-    <div class="mq">
-      <span>Python</span><span>FastAPI</span><span>LangGraph</span><span>LangChain</span><span>BM25</span><span>Cross-encoders</span><span>MongoDB</span><span>gevent</span><span>PyTorch</span><span>NumPy</span><span>React</span><span>Node.js</span><span>Docker</span><span>AWS EC2</span><span>C++</span>
-      <span aria-hidden="true">Python</span><span aria-hidden="true">FastAPI</span><span aria-hidden="true">LangGraph</span><span aria-hidden="true">LangChain</span><span aria-hidden="true">BM25</span><span aria-hidden="true">Cross-encoders</span><span aria-hidden="true">MongoDB</span><span aria-hidden="true">gevent</span><span aria-hidden="true">PyTorch</span><span aria-hidden="true">NumPy</span><span aria-hidden="true">React</span><span aria-hidden="true">Node.js</span><span aria-hidden="true">Docker</span><span aria-hidden="true">AWS EC2</span><span aria-hidden="true">C++</span>
-    </div>
-  </div>
-
-  <section id="work" class="hide-r">
+  <section class="section" id="work" aria-labelledby="work-h">
     <div class="wrap">
-      <p class="eyebrow">Selected work</p>
-      <h2>Systems that ship, <em>with the numbers to prove it.</em></h2>
-
-      <div class="flag">
-        <article class="panel">
-          <p class="meta">Goldman Sachs · AI Engineer Intern · Asset &amp; Wealth Management · 2026</p>
-          <h3>Taking LLM calls off the critical path</h3>
-          <div class="big">50–60%</div>
-          <p class="biglab">lower end-to-end latency in production · execution accuracy unchanged</p>
-          <div class="steps">
-            <div class="step"><b>Problem</b><span>Every advisor query ran 3 sequential LLM calls (intent, planning, tool selection) before anything executed.</span></div>
-            <div class="step"><b>Build</b><span>A millisecond typeahead that ranks candidate actions with BM25, prefix and fuzzy search, and a cross-encoder reranker. Each suggestion maps to a MongoDB template that encodes the full tool-and-execution chain.</span></div>
-            <div class="step"><b>Stack</b><span>Integrated into a LangChain/LangGraph agent stack on FastAPI, with gevent monkey patching for concurrent I/O.</span></div>
+      <div class="grid">
+        <h2 id="work-h" class="span-5">Latency work at Goldman Sachs</h2>
+        <div class="span-6 start-7 stack-4">
+          <p>Each advisor query waited on three LLM calls before any tool ran. I replaced them with a typeahead that shortlists actions, reranks them and runs a stored template.</p>
+          <a class="link" href="goldman.html">Read the Goldman case study</a>
+        </div>
+      </div>
+      <div class="ui app fill" role="img" aria-label="Manan's work list beside the Goldman fast path: shortlist, rerank, template and execution, with no LLM call before the tools run" data-ui-pause-host>
+        <div class="app__pane app__pane--list">
+          <div class="ui ui-panel ui-win" data-ui="window" data-open="Waiting" data-work="Working" data-done="Done">
+            <div class="ui-win__bar">
+              <span class="ui-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="ui-win__crumb">Manan <i>/</i> <b>Work</b></span>
+              <span class="ui-spacer"></span>
+            </div>
+            <div class="ui-win__body">
+              <nav class="ui-win__side" aria-hidden="true">
+                <span class="ui-win__nav is-on"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M3 4h10M3 8h10M3 12h7"/></svg>All<em>10</em></span>
+                <span class="ui-win__nav"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M3 12.5 6 9l2.5 2L13 5"/></svg>Quant<em>2</em></span>
+                <span class="ui-win__nav"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M4 2.5h5l3 3v8H4z"/><path d="M9 2.5v3h3"/></svg>Research<em>3</em></span>
+                <span class="ui-win__nav"><svg class="ui-icon" viewBox="0 0 16 16"><path d="m5 5-3 3 3 3M11 5l3 3-3 3"/></svg>Software<em>5</em></span>
+              </nav>
+              <div class="ui-win__main">
+                <div class="ui-win__cols" aria-hidden="true"><span>Where</span><span>What</span><span>Result</span><span>Year</span></div>
+                <ul class="ui-win__rows">
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="3">GS</span><span class="ui-win__who">Goldman Sachs</span><span class="ui-win__sub">AI assistant, 50–60% faster</span><span class="ui-win__st is-you" data-st>Shipped</span><span class="ui-win__age">2026</span></li>
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="1">TQ</span><span class="ui-win__who">Trexquant</span><span class="ui-win__sub">169 alphas, 81st globally</span><span class="ui-win__st is-done" data-st>Ranked</span><span class="ui-win__age">2026</span></li>
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="5">WQ</span><span class="ui-win__who">WorldQuant BRAIN</span><span class="ui-win__sub">Best Sharpe 2.9</span><span class="ui-win__st is-done" data-st>Gold</span><span class="ui-win__age">2026</span></li>
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="4">JC</span><span class="ui-win__who">Springer journal</span><span class="ui-win__sub">Odor decoding, 95.3%</span><span class="ui-win__st is-done" data-st>Accepted</span><span class="ui-win__age">2026</span></li>
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="2">UG</span><span class="ui-win__who">IIT Kanpur</span><span class="ui-win__sub">Op-amps by deep RL</span><span class="ui-win__st is-done" data-st>Grade A*</span><span class="ui-win__age">2026</span></li>
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="3">AU</span><span class="ui-win__who">AlgoUniversity</span><span class="ui-win__sub">Online judge, 1,000+ users</span><span class="ui-win__st is-done" data-st>Shipped</span><span class="ui-win__age">2025</span></li>
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="1">WA</span><span class="ui-win__who">Wadhwani AI</span><span class="ui-win__sub">Video segmentation</span><span class="ui-win__st is-done" data-st>Shipped</span><span class="ui-win__age">2025</span></li>
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="5">SK</span><span class="ui-win__who">Sukoon</span><span class="ui-win__sub">AI assistant, 5k users</span><span class="ui-win__st is-done" data-st>Shipped</span><span class="ui-win__age">2024</span></li>
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="4">GT</span><span class="ui-win__who">Game Theory Society</span><span class="ui-win__sub">IITK chapter, 250+ people</span><span class="ui-win__st is-done" data-st>Founder</span><span class="ui-win__age">2025</span></li>
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="2">EE</span><span class="ui-win__who">EE Association</span><span class="ui-win__sub">20 initiatives in a year</span><span class="ui-win__st is-done" data-st>Head</span><span class="ui-win__age">2025</span></li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <details>
-            <summary>The trade-off</summary>
-            <p>A deterministic lookup is faster and more predictable than three model calls, but templates must be written and kept current. So I also built an interface to author and manage the template library.</p>
-          </details>
-          <div class="tags"><span>FastAPI</span><span>LangGraph</span><span>BM25</span><span>Rerankers</span><span>MongoDB</span><span>gevent</span></div>
-          <a class="link" href="goldman.html" style="display:inline-block;margin-top:18px">Read the full case study →</a>
-        </article>
-
-        <article class="panel race" aria-labelledby="raceh">
-          <h4 id="raceh"><span>Before and after, same query</span><button class="run" id="run" type="button">▶ Run a query</button></h4>
-          <div class="lane">
-            <div class="lt"><span>Before · 3 LLM hops</span><b id="tb">1.00×</b></div>
-            <div class="pipe" id="pb"><div class="stage llm"><i></i><span>intent</span></div><div class="stage llm"><i></i><span>plan</span></div><div class="stage llm"><i></i><span>tool</span></div><div class="stage ex"><i></i><span>execute</span></div></div>
-          </div>
-          <div class="lane after">
-            <div class="lt"><span>After · lookup</span><b id="ta">0.45×</b></div>
-            <div class="pipe" id="pa"><div class="stage lk"><i></i><span>lookup</span></div><div class="stage ex"><i></i><span>execute</span></div></div>
-          </div>
-          <p class="note">Animated timing is illustrative. Measured result in production: <b>50–60% lower end-to-end latency</b>.</p>
-          <div class="flow">
-            <h5>Inside the fast path</h5>
-            <ol>
-              <li><b>1</b><span>Advisor types a request</span><em>keystrokes</em></li>
-              <li><b>2</b><span>BM25 + prefix/fuzzy search shortlist actions</span><em>recall</em></li>
-              <li><b>3</b><span>Cross-encoder reranks the shortlist</span><em>precision</em></li>
-              <li class="hot"><b>4</b><span>Matched MongoDB template runs the full tool chain</span><em>no LLM hops</em></li>
+        </div>
+        <div class="app__pane app__pane--open" data-ui-loop>
+          <div class="ui ui-panel ui-pipe" data-ui="pipeline-board">
+            <div class="ui-pipe__head">
+              <svg class="ui-icon ui-pipe__branch" viewBox="0 0 16 16" aria-hidden="true"><circle cx="4.5" cy="3.5" r="1.5"/><circle cx="4.5" cy="12.5" r="1.5"/><circle cx="11.5" cy="5" r="1.5"/><path d="M4.5 5v6M11.5 6.5c0 2.6-2.2 3.6-5.6 4.6"/></svg>
+              <span class="ui-pipe__repo">advisor-assistant</span><i class="ui-pipe__slash">/</i><code class="ui-pipe__ref">fast-path</code>
+              <span class="ui-spacer"></span>
+              <span class="ui-pipe__total"><svg class="ui-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8.5" r="5.5"/><path d="M8 5.5v3l2 1.25M6.5 1.75h3"/></svg><span>No LLM before tools</span></span>
+              <span class="ui-chip ui-chip--ink ui-chip--live ui-pipe__chip" data-pipe-chip data-done="Done">Running</span>
+            </div>
+            <div class="ui-pipe__commit">
+              <span class="ui-avatar" data-tone="3">AD</span>
+              <span class="ui-pipe__msg">An advisor starts typing a request</span>
+              <code class="ui-pipe__sha">typeahead</code>
+              <button class="ui-btn ui-btn--ghost ui-btn--sm ui-pipe__btn" type="button" tabindex="-1" data-pipe-btn data-done="Replay">Stop</button>
+            </div>
+            <ol class="ui-pipe__steps">
+              <li class="ui-pipe__step is-done" data-step="input"><span class="ui-pipe__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-pipe__name"><span class="ui-pipe__tool" aria-hidden="true"><img src="assets/icons/fastapi.svg" alt=""></span><span class="ui-pipe__nm">Input</span></span><code class="ui-pipe__cmd">keystrokes to query</code><span class="ui-pipe__time" data-time>live</span><span class="ui-pipe__bar"><i></i></span></li>
+              <li class="ui-pipe__step is-done" data-step="shortlist"><span class="ui-pipe__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-pipe__name"><span class="ui-pipe__tool" aria-hidden="true"><img src="assets/icons/python.svg" alt=""></span><span class="ui-pipe__nm">List</span></span><code class="ui-pipe__cmd">bm25 + prefix + fuzzy</code><span class="ui-pipe__time" data-time>recall</span><span class="ui-pipe__bar"><i></i></span></li>
+              <li class="ui-pipe__step is-run" data-step="rerank" style="--k:0.6"><span class="ui-pipe__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-pipe__name"><span class="ui-pipe__tool" aria-hidden="true"><img src="assets/icons/pytorch.svg" alt=""></span><span class="ui-pipe__nm">Rank</span></span><code class="ui-pipe__cmd">cross-encoder</code><span class="ui-pipe__time" data-time="precision">ranking</span><span class="ui-pipe__bar"><i></i></span></li>
+              <li class="ui-pipe__step" data-step="template"><span class="ui-pipe__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-pipe__name"><span class="ui-pipe__tool" aria-hidden="true"><img src="assets/icons/mongodb.svg" alt=""></span><span class="ui-pipe__nm">Match</span></span><code class="ui-pipe__cmd">match a stored chain</code><span class="ui-pipe__time" data-time="lookup">Queued</span><span class="ui-pipe__bar"><i></i></span></li>
+              <li class="ui-pipe__step" data-step="execute"><span class="ui-pipe__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-pipe__name"><span class="ui-pipe__tool" aria-hidden="true"><img src="assets/icons/langgraph.svg" alt=""></span><span class="ui-pipe__nm">Run</span></span><code class="ui-pipe__cmd">run the tool chain</code><span class="ui-pipe__time" data-time="tools">Queued</span><span class="ui-pipe__bar"><i></i></span></li>
             </ol>
+            <div class="ui-pipe__log" aria-hidden="true">
+              <span class="ui-pipe__line" data-step="input"><b>$</b>typeahead: query arrives as the advisor types</span>
+              <span class="ui-pipe__line" data-step="input">FastAPI, gevent monkey patching for concurrent I/O</span>
+              <span class="ui-pipe__line" data-step="shortlist"><b>$</b>bm25 + prefix + fuzzy search</span>
+              <span class="ui-pipe__line" data-step="shortlist">partial and misspelled input still matches</span>
+              <span class="ui-pipe__line is-on" data-step="rerank"><b>$</b>cross-encoder rerank</span>
+              <span class="ui-pipe__line is-on" data-step="rerank">best action moves to the top of the shortlist</span>
+              <span class="ui-pipe__line is-on" data-step="rerank">no LLM call so far</span>
+              <span class="ui-pipe__line" data-step="template"><b>$</b>find the matching MongoDB template</span>
+              <span class="ui-pipe__line" data-step="template">template holds the full tool-and-execution chain</span>
+              <span class="ui-pipe__line" data-step="execute"><b>$</b>run the chain in the LangGraph agent</span>
+              <span class="ui-pipe__line" data-step="execute">end-to-end latency 50–60% lower in production</span>
+            </div>
           </div>
-          <details>
-            <summary>How the ranking works</summary>
-            <p>BM25 finds keyword matches, prefix and fuzzy search catch partial and misspelled input as the advisor types, and a cross-encoder reranks the shortlist so the best action comes first, all in milliseconds.</p>
-          </details>
-        </article>
-      </div>
-
-      <div class="bento">
-        <article class="tile t3">
-          <p class="meta">Trexquant · WorldQuant · 2026</p>
-          <h3>Quantitative alpha research</h3>
-          <div class="chart" role="img" aria-label="Real cumulative backtest PnL of alpha 791780 from 2007 to 2021, rising steadily to about 0.84 million dollars with no losing year">
-            <svg viewBox="0 0 720 250" preserveAspectRatio="none" aria-hidden="true">
-              <defs><linearGradient id="gf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5EEAD4" stop-opacity=".28"/><stop offset="1" stop-color="#5EEAD4" stop-opacity="0"/></linearGradient></defs>
-              <line x1="0" y1="231" x2="720" y2="231" stroke="#2A3A58" stroke-width="1.5"/>
-              <path id="pnlfill" fill="url(#gf)" d=""/>
-              <path id="pnl" fill="none" stroke="#5EEAD4" stroke-width="3" stroke-linejoin="round" d="M2 231L6 230L10 229L14 227L18 225L22 221L26 217L30 217L34 213L38 209L42 207L46 210L50 209L54 207L58 207L63 208L67 207L71 208L75 207L79 202L83 187L87 184L91 186L95 185L99 185L103 183L107 180L111 179L115 179L119 177L123 175L127 175L131 168L135 168L139 169L143 169L147 169L151 168L155 165L159 164L163 165L167 164L171 164L176 163L180 163L184 161L188 162L192 160L196 159L200 160L204 160L208 159L212 158L216 157L220 156L224 158L228 156L232 154L236 153L240 154L244 152L248 150L252 151L256 150L260 151L264 149L268 150L272 150L276 151L280 150L284 150L289 149L293 148L297 147L301 148L305 147L309 147L313 147L317 147L321 146L325 146L329 146L333 146L337 146L341 146L345 147L349 146L353 146L357 146L361 146L365 147L369 146L373 144L377 144L381 144L385 142L389 143L393 141L397 141L402 142L406 143L410 143L414 141L418 140L422 140L426 138L430 139L434 138L438 137L442 137L446 138L450 139L454 138L458 137L462 135L466 136L470 136L474 134L478 134L482 134L486 135L490 134L494 133L498 133L502 134L506 131L510 130L514 128L519 125L523 125L527 126L531 125L535 124L539 124L543 122L547 122L551 122L555 120L559 119L563 119L567 116L571 117L575 119L579 118L583 119L587 118L591 118L595 116L599 116L603 115L607 114L611 113L615 112L619 112L623 112L627 115L632 109L636 101L640 95L644 92L648 92L652 94L656 98L660 96L664 94L668 92L672 92L676 93L680 93L684 90L688 90L692 90L696 88L700 87L704 87L708 87L712 86L716 84L718 83"/>
-            </svg>
-            <div class="cap"><span>Real backtest · alpha 791780 · 2007–2021</span><span>15 of 15 years positive</span></div>
+          <div class="cmp" aria-hidden="true">
+            <p class="cmp__t">Same query, end to end</p>
+            <div class="cmp__lane"><span class="cmp__k">Before</span><div class="cmp__bar"><i class="llm">Intent</i><i class="llm">Planning</i><i class="llm">Tool selection</i><i class="ex">Execute</i></div></div>
+            <div class="cmp__lane"><span class="cmp__k">After</span><div class="cmp__bar cmp__bar--after"><i class="lk">Lookup</i><i class="ex">Execute</i></div></div>
+            <p class="cmp__n">Measured in production: <b>50–60% lower</b> end-to-end latency, execution accuracy unchanged.</p>
           </div>
-          <p>5,000+ stock-selection signals backtested on 15 years of U.S. equities. 169 qualified at Trexquant (rank 7 at IIT Kanpur, 81 globally); Gold certificate and best Sharpe 2.9 on held-out data at WorldQuant BRAIN.</p>
-          <a class="link" href="alpha-research.html">Read the research notes: four theses, real curves →</a>
-        </article>
-
-        <article class="tile t3">
-          <p class="meta">Undergraduate project · Grade A* · 2026</p>
-          <h3>Op-amps designed by deep RL</h3>
-          <div><div class="num">4 / 4</div><p class="numlab">target specs met · 7-transistor OTA · 60.5 dB gain · 89° phase margin</p></div>
-          <p>Reproduced an IEEE TCAD 2022 framework from scratch: a REINFORCE policy in pure NumPy with hand-written backprop assembles circuits from 36 typed blocks, sized by NSGA-II on live ngspice runs. A hash table skips repeat simulations.</p>
-          <div class="tags"><span>NumPy</span><span>REINFORCE</span><span>NSGA-II</span><span>SPICE</span></div>
-        </article>
-
-        <article class="tile">
-          <p class="meta">AlgoUniversity · SWE Co-Op · 2025</p>
-          <h3>Online judge, 1,000+ users</h3>
-          <p>MERN platform with authentication and real-time code execution, containerised with Docker on AWS EC2.</p>
-          <div class="tags"><span>React</span><span>Node.js</span><span>Docker</span><span>AWS</span></div>
-        </article>
-        <article class="tile">
-          <p class="meta">Wadhwani AI · Research · 2025</p>
-          <h3>Lecture video segmentation</h3>
-          <p>CNN + Bi-LSTM + GCN pipeline that timestamps lecture videos for 1M+ learners and cuts false scene splits.</p>
-          <div class="tags"><span>PyTorch</span><span>GCN</span><span>Bi-LSTM</span></div>
-        </article>
-        <article class="tile">
-          <p class="meta">Sukoon · People + AI · 2024</p>
-          <h3>Multi-agent wellbeing assistant</h3>
-          <p>GPT-4 and Claude agents on LangGraph, validated by therapists, shipped on WhatsApp. 5k users, +34% engagement.</p>
-          <a class="link" href="https://github.com/mananj23/Sukoon" target="_blank" rel="noopener">Source on GitHub →</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="research" class="hide-r">
-    <div class="wrap">
-      <h2>Reading the brain <em>with a 1D CNN.</em></h2>
-      <div class="paper">
-        <div class="in">
-          <div>
-            <p class="venue">Journal of Computational Neuroscience · Springer · Accepted</p>
-            <h3>Machine-learning analysis of odor-frequency encoding in the piriform cortex</h3>
-            <p>Co-author, with Prof. Debanjan Das Gupta. Synaptic-ablation, time-shuffling and neuron-knockout tests show which synapses, timing and sub-populations drive frequency selectivity.</p>
-            <canvas id="raster" aria-hidden="true"></canvas>
-            <p style="font:400 11px/1.4 var(--mono);color:var(--dim);margin:6px 0 14px">Illustrative spike raster</p>
-            <a class="link" href="paper.html">Read about the paper →</a>&nbsp;&nbsp;<a class="link" href="https://github.com/mananj23/Neural_Networking" target="_blank" rel="noopener">Code on GitHub →</a>
-          </div>
-          <div class="acc">95.3%<small>accuracy decoding odor frequency from cortical spike trains</small></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="journey" class="hide-r">
+  <section class="section" id="internships" aria-labelledby="internships-h">
     <div class="wrap">
-      <h2>Internships <em>in AI systems</em></h2>
-      <ol class="tl">
-        <li><span class="when">May 2026 – now</span><div><h3>Goldman Sachs <span>· AI Engineer Intern</span></h3><p>Latency and retrieval for a production agentic assistant used by wealth advisors.</p></div></li>
-        <li><span class="when">May – Jul 2025</span><div><h3>AlgoUniversity <span>· SWE Co-Op, Y Combinator-backed</span></h3><p>Online judge on the MERN stack; mentored by engineers from Google, Microsoft, Apple, Tower Research and AlphaGrep.</p></div></li>
-        <li><span class="when">Dec 2024 – Apr 2025</span><div><h3>Wadhwani AI <span>· Research Intern</span></h3><p>Deep-learning pipeline that segments lecture videos for 1M+ learners.</p></div></li>
-        <li><span class="when">Jul – Dec 2024</span><div><h3>Sukoon, People + AI <span>· Tech Consultant</span></h3><p>Multi-agent mental-health chatbot for college students.</p></div></li>
-      </ol>
-    </div>
-  </section>
-
-  <section id="leadership" class="hide-r">
-    <div class="wrap">
-      <h2>I started IIT Kanpur's <em>game theory community.</em></h2>
-      <div class="lead">
-        <div class="igts"><div class="in">
-          <p class="role">Founder · IIT Kanpur chapter · Aug 2025 – Apr 2026</p>
-          <h3>Indian Game Theory Society</h3>
-          <p>I founded the society's IIT Kanpur chapter, the campus's first group for game theory: how people and markets make strategic decisions. We made it hands-on, teaching ideas through games people play.</p>
-          <div class="inums">
-            <div><b>250+</b><span>attendees across flagship events</span></div>
-            <div><b>150+</b><span>at the launch session on Bayesian and strategic games</span></div>
-            <div><b>5</b><span>curated strategic games at Game Night, 100+ players</span></div>
+      <div class="grid">
+        <div class="span-5">
+          <h2 id="internships-h">4 internships since 2024</h2>
+          <ul class="rows intern">
+            <li><span class="rows__name">Goldman Sachs</span><span class="rows__value">May 2026 to now</span><p>AI engineer intern: latency and retrieval for an advisor assistant.</p></li>
+            <li><span class="rows__name">AlgoUniversity</span><span class="rows__value">May to Jul 2025</span><p>Software co-op: an online judge with live code runs, on Docker and AWS.</p></li>
+            <li><span class="rows__name">Wadhwani AI</span><span class="rows__value">Dec 2024 to Apr 2025</span><p>Research intern: deep learning that segments lecture videos.</p></li>
+            <li><span class="rows__name">Sukoon, People + AI</span><span class="rows__value">Jul to Dec 2024</span><p>Tech consultant: a multi-agent mental-health chatbot.</p></li>
+          </ul>
+        </div>
+        <div class="frame frame--split lit tall span-6 start-7">
+          <div class="stackcard ui d-card" role="img" aria-label="Tools used at each internship: Python, FastAPI, LangGraph, MongoDB, PyTorch, React and Node.js, Docker on AWS, GPT-4 and Claude">
+            <div class="ui d-card__row"><h4 class="d-h">Tools, by where I used them</h4><span class="d-chip">4 teams</span></div>
+            <ul><li><img src="assets/icons/python.svg" alt=""><b>Python</b><span>Goldman Sachs, Wadhwani AI</span></li><li><img src="assets/icons/fastapi.svg" alt=""><b>FastAPI</b><span>Goldman Sachs</span></li><li><img src="assets/icons/langgraph.svg" alt=""><b>LangGraph</b><span>Goldman Sachs, Sukoon</span></li><li><img src="assets/icons/mongodb.svg" alt=""><b>MongoDB</b><span>Goldman Sachs, AlgoUniversity</span></li><li><img src="assets/icons/pytorch.svg" alt=""><b>PyTorch</b><span>Wadhwani AI</span></li><li><img src="assets/icons/react.svg" alt=""><b>React and Node.js</b><span>AlgoUniversity</span></li><li><img src="assets/icons/docker.svg" alt=""><b>Docker on AWS EC2</b><span>AlgoUniversity</span></li><li><img src="assets/icons/openai.svg" alt=""><b>GPT-4 and Claude agents</b><span>Sukoon</span></li></ul>
           </div>
-          <div class="topics"><span>Nash equilibrium</span><span>Mechanism design</span><span>Auctions</span><span>Bayesian games</span></div>
-        </div></div>
-
-        <div class="game" aria-labelledby="gh">
-          <h4>Try it · a game-theory classic</h4>
-          <h3 id="gh">Prisoner's dilemma</h3>
-          <div class="pm" role="group" aria-label="Payoff matrix. Each cell shows your payoff, then theirs.">
-            <span class="hd"></span><span class="hd">They cooperate</span><span class="hd">They defect</span>
-            <span class="hd rh">You cooperate</span>
-            <button class="cell" type="button" data-k="cc" aria-pressed="false"><span class="y">3</span> , <span class="t">3</span></button>
-            <button class="cell" type="button" data-k="cd" aria-pressed="false"><span class="y">0</span> , <span class="t">5</span></button>
-            <span class="hd rh">You defect</span>
-            <button class="cell" type="button" data-k="dc" aria-pressed="false"><span class="y">5</span> , <span class="t">0</span></button>
-            <button class="cell" type="button" data-k="dd" aria-pressed="false"><span class="y">1</span> , <span class="t">1</span></button>
-          </div>
-          <p class="gout" id="gout" aria-live="polite">Pick a cell. Your payoff is in teal, theirs in amber. Can you find the outcome where <b>neither player wants to switch</b>?</p>
-          <p class="gnote">Our sessions taught ideas like this through live games.</p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="roles">
-        <article class="tile">
-          <p class="meta">Head · Electrical Engineering Association · 2025–26</p>
-          <h3>20 initiatives in one year</h3>
-          <p>One of six Heads leading a 28-person team. I built the department's Research Portal and co-led a resume session; together we ran an IEEE VLSI symposium with researchers from 5 institutes, Winter Projects with 500+ applicants, and the 15-day Signal Sprint hackathon.</p>
-          <a class="link" href="eea.html">Read the EEA journey →</a>
+  <section class="section g2" id="projects" aria-labelledby="projects-h">
+    <div class="wrap">
+      <div class="group">
+        <div class="section-head">
+          <h2 id="projects-h">4 projects, each with a measured result. <span class="muted">Quant research, circuit design and applied AI.</span></h2>
+        </div>
+        <div class="grid">
+          <article class="card card--row card--open span-6">
+            <h3>Backtested 5,000+ alphas for Trexquant</h3>
+            <p>Stock-selection signals on 15 years of U.S. equities. 169 qualified, ranking 81st globally.</p>
+            <div class="panel">
+              <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:440px;--ax:max(24px, 50% - 220px);--ay:40px;--ay-sm:16px">
+                <div class="ui d-card pnl-card" role="img" aria-label="Real cumulative backtest of alpha 791780, 2007 to 2021, positive in 15 of 15 years">
+                  <div class="ui d-card__row"><h5>Alpha 791780, cumulative PnL</h5><span class="d-chip">15 of 15 years up</span></div>
+                  <svg class="d-chart" viewBox="0 0 720 250" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="231" x2="720" y2="231"/><path class="ar" d="M2 231L6 230L10 229L14 227L18 225L22 221L26 217L30 217L34 213L38 209L42 207L46 210L50 209L54 207L58 207L63 208L67 207L71 208L75 207L79 202L83 187L87 184L91 186L95 185L99 185L103 183L107 180L111 179L115 179L119 177L123 175L127 175L131 168L135 168L139 169L143 169L147 169L151 168L155 165L159 164L163 165L167 164L171 164L176 163L180 163L184 161L188 162L192 160L196 159L200 160L204 160L208 159L212 158L216 157L220 156L224 158L228 156L232 154L236 153L240 154L244 152L248 150L252 151L256 150L260 151L264 149L268 150L272 150L276 151L280 150L284 150L289 149L293 148L297 147L301 148L305 147L309 147L313 147L317 147L321 146L325 146L329 146L333 146L337 146L341 146L345 147L349 146L353 146L357 146L361 146L365 147L369 146L373 144L377 144L381 144L385 142L389 143L393 141L397 141L402 142L406 143L410 143L414 141L418 140L422 140L426 138L430 139L434 138L438 137L442 137L446 138L450 139L454 138L458 137L462 135L466 136L470 136L474 134L478 134L482 134L486 135L490 134L494 133L498 133L502 134L506 131L510 130L514 128L519 125L523 125L527 126L531 125L535 124L539 124L543 122L547 122L551 122L555 120L559 119L563 119L567 116L571 117L575 119L579 118L583 119L587 118L591 118L595 116L599 116L603 115L607 114L611 113L615 112L619 112L623 112L627 115L632 109L636 101L640 95L644 92L648 92L652 94L656 98L660 96L664 94L668 92L672 92L676 93L680 93L684 90L688 90L692 90L696 88L700 87L704 87L708 87L712 86L716 84L718 83L718 231L2 231Z"/><path class="ln" d="M2 231L6 230L10 229L14 227L18 225L22 221L26 217L30 217L34 213L38 209L42 207L46 210L50 209L54 207L58 207L63 208L67 207L71 208L75 207L79 202L83 187L87 184L91 186L95 185L99 185L103 183L107 180L111 179L115 179L119 177L123 175L127 175L131 168L135 168L139 169L143 169L147 169L151 168L155 165L159 164L163 165L167 164L171 164L176 163L180 163L184 161L188 162L192 160L196 159L200 160L204 160L208 159L212 158L216 157L220 156L224 158L228 156L232 154L236 153L240 154L244 152L248 150L252 151L256 150L260 151L264 149L268 150L272 150L276 151L280 150L284 150L289 149L293 148L297 147L301 148L305 147L309 147L313 147L317 147L321 146L325 146L329 146L333 146L337 146L341 146L345 147L349 146L353 146L357 146L361 146L365 147L369 146L373 144L377 144L381 144L385 142L389 143L393 141L397 141L402 142L406 143L410 143L414 141L418 140L422 140L426 138L430 139L434 138L438 137L442 137L446 138L450 139L454 138L458 137L462 135L466 136L470 136L474 134L478 134L482 134L486 135L490 134L494 133L498 133L502 134L506 131L510 130L514 128L519 125L523 125L527 126L531 125L535 124L539 124L543 122L547 122L551 122L555 120L559 119L563 119L567 116L571 117L575 119L579 118L583 119L587 118L591 118L595 116L599 116L603 115L607 114L611 113L615 112L619 112L623 112L627 115L632 109L636 101L640 95L644 92L648 92L652 94L656 98L660 96L664 94L668 92L672 92L676 93L680 93L684 90L688 90L692 90L696 88L700 87L704 87L708 87L712 86L716 84L718 83"/></svg>
+                  <div class="d-axis" aria-hidden="true"><span>2007</span><span>2014</span><span>2021</span></div>
+                </div>
+              </div></div>
+            </div>
+          </article>
+          <article class="card card--row card--open span-6">
+            <h3>Designed op-amps with deep RL at IIT Kanpur</h3>
+            <p>A REINFORCE policy in pure NumPy builds circuits from 36 block types. The best design met all 4 target specs.</p>
+            <div class="panel">
+              <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:340px;--ax:max(24px, 50% - 170px);--ay:40px;--ay-sm:16px" data-ui-loop>
+                <div class="ui ui-panel ui-checks" data-ui="checklist">
+                  <div class="ui-checks__head"><div class="ui-title">7-transistor OTA</div><span class="ui-spacer"></span><div class="ui-meta" data-checks-count>2 of 5</div></div>
+                  <div class="ui-checks__bar"><i data-checks-bar style="--k:0.4"></i></div>
+                  <ul class="ui-checks__list">
+                    <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Pick blocks from 36 types</span></li>
+                    <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Size them with NSGA-II</span></li>
+                    <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Simulate live in ngspice</span></li>
+                    <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Gain 60.5 dB, phase margin 89°</span></li>
+                    <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Meet 4 of 4 target specs</span></li>
+                  </ul>
+                </div>
+              </div></div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card card--row card--open span-6">
+          <h3>Segmented lecture videos at Wadhwani AI</h3>
+          <p>A CNN, Bi-LSTM and GCN pipeline timestamps lectures for 1M+ learners with fewer false splits.</p>
+          <div class="panel">
+            <div class="lst"><div class="ui d-card">
+              <div class="ui d-card__row"><h4 class="d-h">Lecture video pipeline</h4><span class="d-chip">1M+ learners</span></div>
+              <div class="d-note__line"><img class="d-ic" src="assets/icons/pytorch.svg" alt=""><span><b>CNN</b> reads each frame</span></div>
+              <div class="d-note__line"><img class="d-ic" src="assets/icons/pytorch.svg" alt=""><span><b>Bi-LSTM</b> reads the sequence</span></div>
+              <div class="d-note__line"><img class="d-ic" src="assets/icons/pytorch.svg" alt=""><span><b>GCN</b> marks scenes</span></div>
+              <div class="d-note__line"><i>✓</i><span>Timestamps with <b>fewer false splits</b></span></div>
+            </div></div>
+          </div>
         </article>
-        <article class="tile">
-          <p class="meta">Secretary · IIT Kanpur Consulting Group · 2024–25</p>
-          <h3>ML camps for freshers</h3>
-          <p>Organised and mentored <a href="https://github.com/mananj23/PIXEL_PERSONA/" target="_blank" rel="noopener" style="color:var(--cyan)">Pixel Persona</a> and <a href="https://github.com/Ameer1803/Web-Genie" target="_blank" rel="noopener" style="color:var(--cyan)">Web Genie</a>, covering CNNs, computer vision, LLMs, agentic workflows and full-stack deployment.</p>
+        <article class="card card--row card--open span-6">
+          <h3>Shipped a 5k-user agent on WhatsApp</h3>
+          <p>For Sukoon: GPT-4 and Claude agents on LangGraph, reviewed by therapists, with 34% more engagement.</p>
+          <div class="panel">
+            <div class="lst"><div class="ui d-card">
+              <div class="ui d-card__row"><h4 class="d-h">Sukoon assistant</h4><span class="d-chip">5k users</span></div>
+              <div class="d-note__line"><img class="d-ic" src="assets/icons/langgraph.svg" alt=""><span><b>LangGraph</b> routes between agents</span></div>
+              <div class="d-note__line"><img class="d-ic" src="assets/icons/openai.svg" alt=""><span><b>GPT-4</b> agent</span></div>
+              <div class="d-note__line"><img class="d-ic" src="assets/icons/claude.svg" alt=""><span><b>Claude</b> agent</span></div>
+              <div class="d-note__line"><img class="d-ic" src="assets/icons/whatsapp.svg" alt=""><span>Shipped on <b>WhatsApp</b>, +34% engagement</span></div>
+            </div></div>
+          </div>
         </article>
       </div>
     </div>
   </section>
 
-  <section id="record" class="hide-r">
+  <section class="section" id="statement" data-moment="letters-assemble" aria-labelledby="statement-h">
     <div class="wrap">
-      <h2>Ranks <em>and recognition.</em></h2>
-      <div class="rec">
-        <div class="r"><b>1287</b><span>All India Rank, JEE Advanced 2023 · top 0.8%</span></div>
-        <div class="r"><b>#7</b><span>IIT Kanpur, Trexquant Alpha Challenge · #81 globally</span></div>
-        <div class="r"><b>Gold</b><span>WorldQuant BRAIN certificate · 550,000+ participants</span></div>
-        <div class="r"><b>8.4</b><span>CPI · Academic Excellence Award 2023–24 · Google Intern Connect 2025</span></div>
+      <h2 class="mo-la__type" id="statement-h">Fewer hops, faster answers</h2>
+      <p class="mo-la__sub">At Goldman a ranked lookup replaced three model calls with no loss in accuracy. I start each system by asking which steps can go.</p>
+    </div>
+  </section>
+
+  <section class="section" id="paper" aria-labelledby="paper-h">
+    <div class="wrap">
+      <div class="grid">
+        <div class="span-5">
+          <h2 id="paper-h">Springer journal paper on decoding smell</h2>
+          <p class="t-lead" style="margin-top:var(--s-5)">Accepted in the Journal of Computational Neuroscience (Springer). With Prof. Debanjan Das Gupta, I trained a 1D CNN on piriform-cortex spike trains to find what drives odor-frequency selectivity.</p>
+          <ul class="facts">
+            <li><b>95.3%</b> accuracy decoding odor frequency</li>
+            <li>Synapse ablation, time shuffling and neuron knockout tests</li>
+          </ul>
+          <a class="link" href="paper.html">Read about the paper</a>
+        </div>
+        <div class="frame frame--split lit tall span-6 start-7">
+          <div class="stage stage--fade-b"><div class="at-corner to-edge" style="--ax:40px;--ay:40px">
+            <div class="ui ui-doc" data-ui="doc">
+              <article class="ui-doc__page">
+                <div class="ui-doc__label">Journal of Computational Neuroscience, accepted</div>
+                <div class="ui-doc__title">Machine-learning analysis of odor-frequency encoding in the piriform cortex</div>
+                <div class="ui-doc__text">A 1D convolutional network decodes odor frequency from piriform-cortex spike trains with <mark class="ui-doc__mark is-on">95.3% accuracy</mark>.</div>
+                <div class="ui-doc__text">Synaptic ablation, time shuffling and neuron knockout show <mark class="ui-doc__mark">which synapses, timing and sub-populations</mark> drive frequency selectivity.</div>
+                <div class="ui-doc__text">Manan Jindal and Prof. Debanjan Das Gupta, IIT Kanpur.</div>
+              </article>
+              <aside class="ui-doc__note ui-panel is-on" aria-live="polite">
+                <div class="ui-doc__kind"><span class="ui-doc__dot"></span><span data-doc-kind>Result</span></div>
+                <div class="ui-doc__msg" data-doc-msg>Odor frequency decoded from spikes alone.</div>
+                <div class="ui-doc__where" data-doc-where>From the paper</div>
+              </aside>
+            </div>
+          </div></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="contact">
+  <section class="section" id="leadership" style="--hm: 2" aria-labelledby="leadership-h">
     <div class="wrap">
-      <p class="eyebrow">Contact</p>
-      <h2>Let's build something <span>fast.</span></h2>
-      <p>I graduate from IIT Kanpur in 2027 and I'm looking for software, AI and quant roles. Email is the quickest way to reach me.</p>
-      <div class="actions">
-        <span class="mail" id="email">mananj23@iitk.ac.in</span>
-        <button class="btn primary" id="copy" type="button">Copy email</button>
-        <a class="btn" href="https://www.linkedin.com/in/manan-jindal-7830ba27a/" target="_blank" rel="noopener">LinkedIn</a>
+      <div class="section-head">
+        <h2 id="leadership-h">Leadership at IIT Kanpur. <span class="muted">I founded the campus's first game theory group.</span></h2>
+      </div>
+      <div class="grid lead-cards">
+        <article class="card card--row card--open">
+          <h3>Founded IIT Kanpur's game theory chapter</h3>
+          <p>250+ attendees across events, taught through games played live.</p>
+          <div class="panel">
+            <div class="pd">
+              <div class="ui d-card">
+                <div class="ui d-card__row"><h4 class="d-h" id="pd-h">Prisoner's dilemma</h4><span class="d-chip">Pick a cell</span></div>
+                <div class="pd__grid" role="group" aria-labelledby="pd-h">
+                  <span class="pd__hd pd__hd--row">You / they</span><span class="pd__hd">Cooperate</span><span class="pd__hd">Defect</span>
+                  <span class="pd__hd pd__hd--row">Cooperate</span>
+                  <button class="pd__cell" type="button" data-k="cc" aria-pressed="false">3 , 3</button>
+                  <button class="pd__cell" type="button" data-k="cd" aria-pressed="false">0 , 5</button>
+                  <span class="pd__hd pd__hd--row">Defect</span>
+                  <button class="pd__cell" type="button" data-k="dc" aria-pressed="false">5 , 0</button>
+                  <button class="pd__cell" type="button" data-k="dd" aria-pressed="false">1 , 1</button>
+                </div>
+                <p class="pd__out" id="pd-out" aria-live="polite">Find the cell where <b>neither player gains by switching alone</b>.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="card card--row card--open">
+          <h3>Led 20 initiatives as an EE Association Head</h3>
+          <p>One of six Heads in a 28-person team, across the 2025–26 year.</p>
+          <div class="panel">
+            <div class="lst"><div class="ui d-card">
+              <div class="ui d-card__row"><h4 class="d-h">2025–26 events</h4><span class="d-chip">20 run</span></div>
+              <div class="d-note__line"><i>✓</i><span><b>IEEE VLSI symposium</b>, 5 institutes</span></div>
+              <div class="d-note__line"><i>✓</i><span><b>Winter Projects</b>, 500+ applicants</span></div>
+              <div class="d-note__line"><i>✓</i><span><b>Signal Sprint</b>, a 15-day hackathon</span></div>
+              <div class="d-note__line"><i>✓</i><span><b>Research Portal</b>, built by me</span></div>
+            </div></div>
+          </div>
+        </article>
+        <article class="card card--row card--open">
+          <h3>Ran 2 ML camps for freshers</h3>
+          <p>As Consulting Group Secretary I organised and mentored both, from CNNs to deployed apps.</p>
+          <div class="panel">
+            <div class="lst"><div class="ui d-card">
+              <div class="ui d-card__row"><h4 class="d-h">Pixel Persona and Web Genie</h4></div>
+              <div class="chips"><span>CNNs</span><span>Computer vision</span><span>LLMs</span><span>Agentic workflows</span><span>Full-stack deployment</span></div>
+            </div></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="questions" aria-labelledby="questions-h">
+    <div class="wrap">
+      <div class="grid">
+        <div class="span-5 stack-4">
+          <h2 id="questions-h">Questions recruiters ask</h2>
+          <p>The short answers. The résumé has the rest.</p>
+          <div class="find d-card">
+            <a href="mailto:mananj23@iitk.ac.in"><img src="assets/icons/gmail.svg" alt="">Email<span>mananj23@iitk.ac.in</span></a>
+            <a href="https://github.com/mananj23" rel="noopener"><img src="assets/icons/github.svg" alt="">GitHub<span>mananj23</span></a>
+            <a href="https://www.linkedin.com/in/manan-jindal-7830ba27a/" rel="noopener"><img src="assets/icons/linkedin.svg" alt="">LinkedIn<span>Manan Jindal</span></a>
+            <a href="resume.pdf"><img src="assets/icons/ui-file-text.svg" alt="">Résumé<span>PDF, 1 page</span></a>
+          </div>
+        </div>
+        <div class="faq span-6 start-7">
+          <div class="faq__item"><h3>When do you graduate from IIT Kanpur?</h3><p>In 2027, with a B.Tech in Electrical Engineering and a Minor in CSE (Machine Learning).</p></div>
+          <div class="faq__item"><h3>Which roles are you looking for in 2027?</h3><p>Software engineering, AI and ML engineering, and quant research or trading roles.</p></div>
+          <div class="faq__item"><h3>What are your grades at IIT Kanpur?</h3><p>CPI 8.4 and the Academic Excellence Award 2023–24. All India Rank 1287 in JEE Advanced 2023.</p></div>
+          <div class="faq__item"><h3>How did you do at Trexquant and WorldQuant?</h3><p>7th at IIT Kanpur and 81st globally in the Trexquant Alpha Challenge, and a Gold certificate at WorldQuant BRAIN.</p></div>
+          <div class="faq__item"><h3>Where is the code for these 4 projects?</h3><p>On <a class="link" href="https://github.com/mananj23" rel="noopener">GitHub</a>, along with the paper's code and the ML camp projects.</p></div>
+        </div>
       </div>
     </div>
   </section>
 </main>
 
-<footer><div class="wrap"><span>© 2026 Manan Jindal · B.Tech EE, minor in CSE (ML), IIT Kanpur</span><span>Press <span class="kbd" id="kmod2">Ctrl K</span> to jump anywhere</span></div></footer>
+<footer class="footer closing footer--dark ground-inverse" id="contact" aria-labelledby="close-h">
+  <div class="wrap">
+    <div class="closing__cta close--type">
+      <div class="section-head">
+        <h2 id="close-h">Open to 2027 roles in software, AI and quant</h2>
+        <p class="t-small muted">Graduating from IIT Kanpur in 2027.</p>
+      </div>
+      <a class="btn btn--primary btn--xl btn--wide" href="mailto:mananj23@iitk.ac.in">Email Manan<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+    </div>
+    <div class="closing__links">
+      <div class="grid">
+        <div class="span-4 stack-4">
+          <a class="nav__logo" href="#top"><span class="mark" data-mark="ring" aria-hidden="true"></span>Manan Jindal</a>
+          <p class="footer__lede">AI engineer, final year at IIT Kanpur.</p>
+        </div>
+        <div class="span-2 footer__col"><h3>Work</h3><ul><li><a href="#work">Goldman Sachs</a></li><li><a href="#projects">Projects</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Research</h3><ul><li><a href="#paper">Paper</a></li><li><a href="alpha-research.html">Alpha notes</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>About</h3><ul><li><a href="#internships">Internships</a></li><li><a href="#leadership">Leadership</a></li><li><a href="#questions">FAQ</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Elsewhere</h3><ul><li><a href="https://github.com/mananj23" rel="noopener">GitHub</a></li><li><a href="https://www.linkedin.com/in/manan-jindal-7830ba27a/" rel="noopener">LinkedIn</a></li></ul></div>
+      </div>
+      <div class="footer__legal">
+        <span>&copy; 2026 Manan Jindal</span>
+        <span>Product names and logos are trademarks of their owners.</span>
+      </div>
+    </div>
+  </div>
+</footer>
 
-<dialog class="cmd" id="cmd" aria-label="Command menu">
-  <input id="q" type="text" placeholder="Jump to a section or run an action…" autocomplete="off" aria-label="Search commands" aria-controls="cl">
-  <ul id="cl" role="listbox"></ul>
-  <div class="foot"><span>↑↓ move</span><span>↵ select</span><span>esc close</span></div>
-</dialog>
-
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-
+<script type="module" src="assets/system.js"></script>
+<script type="module" src="assets/motion/motion.js"></script>
+<script type="module" src="assets/layout/layout.js"></script>
 <script>
-(function(){
-var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;var still=false;
-(function(){var b=document.getElementById('mbtn');b.addEventListener('click',function(){still=!still;document.body.classList.toggle('still',still);b.setAttribute('aria-pressed',still);b.textContent=still?'▶ Play motion':'❚❚ Pause motion'})})();
-var mac=/Mac|iPhone|iPad/.test(navigator.platform||'');
-['kmod','kmod2'].forEach(function(id){var e=document.getElementById(id); if(e) e.textContent=mac?'⌘ K':'Ctrl K';});
-
-/* toast */
-var toastT; function toast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove('on')},2200)}
-
-/* copy email */
-function copyEmail(){var t='mananj23@iitk.ac.in';
-  function sel(){var el=document.getElementById('email');var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);toast('Email selected. Press '+(mac?'⌘':'Ctrl')+'+C to copy.')}
-  try{navigator.clipboard.writeText(t).then(function(){toast('Copied '+t)},sel)}catch(e){sel()}}
-document.getElementById('copy').addEventListener('click',copyEmail);
-
-/* rotating headline word */
-var words=['fast AI.','search systems.','quant signals.','reliable agents.'],wi=0,rot=document.getElementById('rot');
-if(!reduce) setInterval(function(){if(still)return;rot.classList.add('out');setTimeout(function(){wi=(wi+1)%words.length;rot.textContent=words[wi];rot.classList.remove('out')},350)},2600);
-
-/* recruiter mode */
-var rb=document.getElementById('rmode');
-function setR(on){document.body.classList.toggle('rmode',on);rb.setAttribute('aria-pressed',on);rb.textContent=on?'Full site':'Recruiter mode';if(on){document.getElementById('tldr').scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})}}
-rb.addEventListener('click',function(){setR(!document.body.classList.contains('rmode'))});
-
-/* signal field */
-(function(){var c=document.getElementById('field');if(!c.getContext)return;var x=c.getContext('2d'),W,H,d=Math.min(devicePixelRatio||1,2),mx=-1e4,my=-1e4,t=0,run=true;
-function size(){var r=c.getBoundingClientRect();W=r.width;H=r.height;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0);draw()}
-var host=c.parentElement;host.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});host.addEventListener('pointerleave',function(){mx=my=-1e4});
-var N=28;function draw(){x.clearRect(0,0,W,H);for(var i=0;i<N;i++){var base=H*(.1+.85*i/N),amp=10+16*Math.sin(i*1.7),f=.004+.0016*Math.sin(i),ph=i*.9+t*(.5+.25*Math.sin(i*2.3));var g=x.createLinearGradient(0,0,W,0),a=.08+.24*Math.pow(Math.sin(i/N*Math.PI),2);g.addColorStop(0,'rgba(94,234,212,0)');g.addColorStop(.45,'rgba(94,234,212,'+a+')');g.addColorStop(1,'rgba(247,185,85,'+a*.9+')');x.strokeStyle=g;x.lineWidth=1.1;x.beginPath();for(var px=0;px<=W;px+=8){var y=base+Math.sin(px*f+ph)*amp+Math.sin(px*f*2.3-ph*.7)*amp*.35,dx=px-mx,dy=y-my,q=dx*dx+dy*dy;if(q<26000){var k=1-q/26000;y+=(dy>0?1:-1)*k*k*40}px?x.lineTo(px,y):x.moveTo(px,y)}x.stroke()}}
-size();addEventListener('resize',size);
-if(!reduce){if('IntersectionObserver'in window)new IntersectionObserver(function(e){run=e[0].isIntersecting}).observe(c);(function loop(){if(run&&!still){t+=.012;draw()}requestAnimationFrame(loop)})()}})();
-
-/* real backtest curve: fill area + draw-on */
-(function(){var p=document.getElementById('pnl'),f=document.getElementById('pnlfill');f.setAttribute('d',p.getAttribute('d')+'L718 231L2 231Z');
-if(reduce||!('IntersectionObserver'in window))return;var L=p.getTotalLength();
-new IntersectionObserver(function(es,o){if(es[0].isIntersecting){p.style.strokeDasharray=L;p.style.strokeDashoffset=L;p.getBoundingClientRect();p.style.transition='stroke-dashoffset 1.8s cubic-bezier(.2,.7,.2,1)';p.style.strokeDashoffset=0;o.disconnect()}},{threshold:.4}).observe(p)})();
-
-/* latency race */
-(function(){var btn=document.getElementById('run');var tb=document.getElementById('tb'),ta=document.getElementById('ta');
-var B=[].slice.call(document.querySelectorAll('#pb i')),A=[].slice.call(document.querySelectorAll('#pa i'));
-var unit=900,durB=[1,1,1,.9],durA=[.32,.9];var tot=durB.reduce(function(a,b){return a+b});
-function play(list,dur,label,max){list.forEach(function(i){i.style.transition='none';i.style.transform='scaleX(0)'});var acc=0;list.forEach(function(i,k){var s=acc;acc+=dur[k];setTimeout(function(){i.style.transition='transform '+(dur[k]*unit)+'ms linear';i.style.transform='scaleX(1)'},s*unit+30)});
-var t0=performance.now();(function tick(n){var e=(n-t0)/unit;var v=Math.min(e,acc)/tot;label.textContent=v.toFixed(2)+'×';if(e<acc)requestAnimationFrame(tick)})(t0)}
-btn.addEventListener('click',function(){if(reduce){toast('Before 1.00× · After 0.45×');return}play(B,durB,tb);play(A,durA,ta)});
-if(!reduce&&'IntersectionObserver'in window)new IntersectionObserver(function(es,o){if(es[0].isIntersecting){btn.click();o.disconnect()}},{threshold:.6}).observe(btn.closest('.race'))})();
-
-/* spike raster (illustrative) */
-(function(){var c=document.getElementById('raster');if(!c.getContext)return;var x=c.getContext('2d'),d=Math.min(devicePixelRatio||1,2),W,H,rows=14,sp=[],run=true;
-function size(){var r=c.getBoundingClientRect();W=r.width;H=r.height;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0)}size();addEventListener('resize',size);
-for(var i=0;i<rows;i++)for(var k=0;k<20;k++)sp.push({r:i,x:Math.random()*1});
-function draw(){x.clearRect(0,0,W,H);var rh=(H-16)/rows;for(var j=0;j<sp.length;j++){var s=sp[j],px=s.x*W,burst=Math.abs(px-W*.55)<W*.12;x.fillStyle=burst?'rgba(94,234,212,.95)':'rgba(141,155,177,.55)';x.fillRect(px,8+s.r*rh+1,1.6,rh-3)}
-x.fillStyle='rgba(247,185,85,.10)';x.fillRect(W*.43,0,W*.24,H)}
-function step(){for(var j=0;j<sp.length;j++){var s=sp[j];s.x-=.0016;if(s.x<0){s.x=1;}}if(Math.random()<.5){var r=Math.floor(Math.random()*rows);sp.push({r:r,x:1});if(sp.length>420)sp.shift()}}
-draw();if(!reduce){if('IntersectionObserver'in window)new IntersectionObserver(function(e){run=e[0].isIntersecting}).observe(c);(function loop(){if(run&&!still){step();draw()}requestAnimationFrame(loop)})()}})();
-
-
-/* prisoner's dilemma */
-(function(){var out=document.getElementById('gout');var msg={
- cc:'<b>Both cooperate: 3 each.</b> Best for the pair, but each of you could switch to defect and get 5. Not stable.',
- cd:'<b>You cooperate, they defect: 0 for you, 5 for them.</b> You would switch to defect and raise your payoff to 1.',
- dc:'<b>You defect, they cooperate: 5 for you, 0 for them.</b> They would switch to defect and raise theirs to 1.',
- dd:'<b>Both defect: 1 each. This is the Nash equilibrium.</b> Neither of you gains by switching alone, even though both cooperating pays more. That gap is what makes the game famous.'};
-document.querySelectorAll('.cell').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.cell').forEach(function(c){c.setAttribute('aria-pressed','false');c.classList.remove('nash')});b.setAttribute('aria-pressed','true');if(b.dataset.k==='dd')b.classList.add('nash');out.innerHTML=msg[b.dataset.k]})})})();
-
-/* spotlight */
-document.querySelectorAll('.tile,.panel').forEach(function(el){el.addEventListener('pointermove',function(e){var r=el.getBoundingClientRect();el.style.setProperty('--x',(e.clientX-r.left)+'px');el.style.setProperty('--y',(e.clientY-r.top)+'px')})});
-
-/* command palette */
-var RESUME=true;
-var dlg=document.getElementById('cmd'),q=document.getElementById('q'),ul=document.getElementById('cl'),sel=0,cur=[];
-function go(id){setR(false);dlg.close();var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:reduce?'auto':'smooth'})}
-var items=[
- {t:'Selected work',k:'section',f:function(){go('work')}},
- {t:'Goldman Sachs case study',k:'section',f:function(){go('work')}},
- {t:'Research paper',k:'section',f:function(){go('research')}},
- {t:'Journey',k:'section',f:function(){go('journey')}},
- {t:'Leadership: Indian Game Theory Society',k:'section',f:function(){go('leadership')}},
- {t:'Paper: piriform cortex (full write-up)',k:'page',href:'paper.html',self:true},
- {t:'EEA journey: 20 initiatives',k:'page',href:'eea.html',self:true},
- {t:'Ranks and recognition',k:'section',f:function(){go('record')}},
- {t:'Contact',k:'section',f:function(){go('contact')}},
- {t:'Copy email address',k:'action',f:function(){dlg.close();copyEmail()}},
- {t:'Toggle recruiter mode',k:'action',f:function(){dlg.close();setR(!document.body.classList.contains('rmode'))}},
- {t:'Goldman Sachs case study (full write-up)',k:'page',href:'goldman.html',self:true},
- {t:'Alpha research notes',k:'page',href:'alpha-research.html',self:true},
- {t:'Open GitHub',k:'link',href:'https://github.com/mananj23'},
- {t:'Open LinkedIn',k:'link',href:'https://www.linkedin.com/in/manan-jindal-7830ba27a/'}];
-if(RESUME)items.splice(6,0,{t:'Download resume (PDF)',k:'file',href:'resume.pdf'});
-function render(){var v=q.value.toLowerCase().trim();cur=items.filter(function(i){return !v||i.t.toLowerCase().indexOf(v)>-1});sel=Math.min(sel,Math.max(cur.length-1,0));
- ul.innerHTML='';if(!cur.length){var e=document.createElement('li');e.textContent='No match. Try "work" or "email".';ul.appendChild(e);return}
- cur.forEach(function(i,n){var li=document.createElement('li');li.setAttribute('role','option');li.setAttribute('aria-selected',n===sel);
-  if(i.href){var a=document.createElement('a');a.href=i.href;if(!i.self){a.target='_blank';a.rel='noopener';}a.textContent=i.t;a.style.textDecoration='none';a.style.flex='1';li.appendChild(a)}else{var s=document.createElement('span');s.textContent=i.t;li.appendChild(s)}
-  var sm=document.createElement('small');sm.textContent=i.k;li.appendChild(sm);
-  li.addEventListener('click',function(ev){if(i.href){dlg.close();return}i.f()});li.addEventListener('pointermove',function(){if(sel!==n){sel=n;mark()}});ul.appendChild(li)})}
-function mark(){[].forEach.call(ul.children,function(li,n){li.setAttribute('aria-selected',n===sel)})}
-function open(){q.value='';sel=0;render();dlg.showModal();q.focus()}
-document.getElementById('openCmd').addEventListener('click',open);
-q.addEventListener('input',function(){sel=0;render()});
-q.addEventListener('keydown',function(e){if(e.key==='ArrowDown'){e.preventDefault();sel=Math.min(sel+1,cur.length-1);mark()}else if(e.key==='ArrowUp'){e.preventDefault();sel=Math.max(sel-1,0);mark()}else if(e.key==='Enter'){e.preventDefault();var i=cur[sel];if(!i)return;if(i.href){ul.children[sel].querySelector('a').click();dlg.close()}else i.f()}});
-dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
-addEventListener('keydown',function(e){if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();dlg.open?dlg.close():open()}});
-})();
+(function(){var out=document.getElementById('pd-out');if(!out)return;var msg={
+ cc:'<b>Both cooperate: 3 each.</b> Best for the pair, but either of you gets 5 by switching to defect.',
+ cd:'<b>You get 0, they get 5.</b> You would switch to defect and raise your payoff to 1.',
+ dc:'<b>You get 5, they get 0.</b> They would switch to defect and raise theirs to 1.',
+ dd:'<b>Both defect: the Nash equilibrium.</b> Neither of you gains by switching alone, though both cooperating pays more.'};
+var cells=document.querySelectorAll('.pd__cell');cells.forEach(function(b){b.addEventListener('click',function(){cells.forEach(function(c){c.setAttribute('aria-pressed','false');c.classList.remove('is-nash')});b.setAttribute('aria-pressed','true');if(b.dataset.k==='dd')b.classList.add('is-nash');out.innerHTML=msg[b.dataset.k]})})})();
 </script>
-
-</body></html>
+</body>
+</html>

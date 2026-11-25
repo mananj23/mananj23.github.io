@@ -1,6 +1,6 @@
 # mananj23.github.io
 
-Personal website of Manan Jindal. Plain HTML and CSS, no build step.
+Personal website of Manan Jindal. Plain HTML, CSS and a little JavaScript, no build step. Fonts are self-hosted in `assets/fonts`.
 
 ## Put it online (free, about 5 minutes)
 1. On GitHub, create a **public** repository named exactly `mananj23.github.io`.
@@ -16,8 +16,9 @@ Personal website of Manan Jindal. Plain HTML and CSS, no build step.
 - `eea.html` Electrical Engineering Association journey (add photos in `images/`, see the note there)
 - `resume.pdf` resume linked from the Resume button (replace it with any newer PDF, same name)
 - `site.css` styles for the write-up pages
-- `favicon.svg`, `og.png` tab icon and link-preview image
+- `assets/` the design system, motion, UI pieces, icons and fonts the home page uses (keep the folder as it is)
+- `favicon.svg`, `share.jpg` tab icon and link-preview image
 - `404.html`, `robots.txt`, `sitemap.xml` housekeeping for GitHub Pages and search engines
 
 ## Using your own domain later
-Add a file named `CNAME` containing the domain (for example `mananjindal.dev`), then point the domain's DNS at GitHub Pages as described in GitHub's "Managing a custom domain" guide. If you change the domain, update the URLs in `sitemap.xml`, `robots.txt` and the `og:image` line in `index.html`.
+Add a file named `CNAME` containing the domain (for example `mananjindal.dev`), then point the domain's DNS at GitHub Pages as described in GitHub's "Managing a custom domain" guide. If you change the domain, update the URLs in `sitemap.xml`, `robots.txt` and the `og:image` and `canonical` lines in `index.html`.
