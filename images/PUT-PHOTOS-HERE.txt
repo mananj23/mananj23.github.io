@@ -1,0 +1,11 @@
+Drop your EEA photos in this folder with exactly these names (JPG):
+
+eea-1.jpg  EEA team, 2025-26
+eea-2.jpg  Departmental Freshers 2025
+eea-3.jpg  IEEE Symposium on Microelectronics and VLSI
+eea-4.jpg  Winter Projects kickoff
+eea-5.jpg  Signal Sprint hackathon
+eea-6.jpg  EE farewell, Class of 2026
+
+Any photo that is missing is simply left out of the page, so you can add them one at a time.
+Landscape photos look best. Keep each under about 500 KB.
