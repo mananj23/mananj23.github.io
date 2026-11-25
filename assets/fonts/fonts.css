@@ -1,0 +1,5 @@
+/* self-hosted (Fontsource, SIL Open Font License): no third-party request on load */
+@font-face { font-family: "Funnel Display"; font-style: normal; font-display: swap; font-weight: 300 800; src: url(funnel-display-latin-wght-normal.woff2) format("woff2-variations"); }
+@font-face { font-family: "Funnel Sans"; font-style: normal; font-display: swap; font-weight: 300 800; src: url(funnel-sans-latin-wght-normal.woff2) format("woff2-variations"); }
+@font-face { font-family: "DM Mono"; font-style: normal; font-display: swap; font-weight: 400; src: url(dm-mono-latin-400-normal.woff2) format("woff2"); }
+@font-face { font-family: "DM Mono"; font-style: normal; font-display: swap; font-weight: 500; src: url(dm-mono-latin-500-normal.woff2) format("woff2"); }
